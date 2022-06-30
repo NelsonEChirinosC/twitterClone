@@ -1,0 +1,16 @@
+{
+  "name": "clontwitter",
+  "version": "1.0.0",
+  "description": "This is a clone of twitter ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "Twitter"
+  ],
+  "author": "Nelson Chirinos",
+  "license": "MIT"
+}
