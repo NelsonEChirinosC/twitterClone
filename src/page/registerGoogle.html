@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Styles  -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/registerGoogle.css">
+    <link rel="stylesheet" href="../css/registerGoogle-media-min600.css" media="(min-width:600px)">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/cb5f356e9e.js" crossorigin="anonymous"></script>
+
+
+    <!-- Title -->
+    <link rel="icon" type="image/x-icon" href="https://cdn.icon-icons.com/icons2/1222/PNG/128/1492616990-1-google-search-logo-engine-service-suits_83412.png">
+    <title>
+        Acceso Cuentas de Google - Chrome
+    </title>
+</head>
+<body>
+
+    <main>
+        <div class="main__loading__bar">
+            <div class="main__loading__bar--blue"></div>
+        </div>
+
+        <div class="main">
+            <section class="main__titles">
+
+                <img src="../../img/googleTitle2-removebg-preview.png" alt="Imagen de google">
+                <h2 class="main__titles__principalTitle">Acceder</h2>
+                <h3 class="main__titles__secundaryTitle active" >Usa tu Cuenta de Google</h3>
+
+                <button class="twitter__button twitter__button--white button__titles__password"> 
+                    <span class="titles__password__userIcon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <span id="registerGoogle__emailUser">
+                        
+                    </span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+
+            </section>
+            <section class="main__inputs">
+
+                <form class="main__inputs__form form__email" action="">
+    
+                    <label class="inputs__form__label" for="email-input">
+                        <input id="email-input" class="inputs__form__general" type="text" placeholder="">
+                        <span class="inputs__form__placeholder"> Correo electronico o telefono </span>
+                    </label>
+                    <span class="error__input" ></span>
+                    <p class="main__inputs__forgotEmail"> <a href="#">¿Olvidaste el correo electrónico?</a> </p>
+                    <p class="main__inputs__notComputer">
+                        ¿Esta no es tu computadora? Usa el modo de invitado para navegar de forma privada. <a href="#">Más información</a>
+                    </p>
+                    <div class="buttons__container">
+                        <ul class="buttons__container__toCreateAccount">
+                            <li> Para mi </li>
+                            <li> Para mi hijo </li>
+                            <li> Para administrar mi negocio </li>
+                        </ul>
+                        <button type="button" class="twitter__button button__createAccount"> Crear cuenta </button>
+                        <button type="button" class="twitter__button twitter__button--blue button__next"> Siguiente 
+                        </button>
+                    </div>
+                </form>
+
+                <form class="main__inputs__form form__password move" action="">
+    
+                    <label class="inputs__form__label" for="password__input">
+                        <input 
+                        id="password__input" class="inputs__form__general" 
+                        type="password" 
+                        placeholder="" />
+                        
+                        <span class="inputs__form__placeholder"> Ingresa tu contraseña </span>
+                    </label>
+                    <span class="error__input active" > 
+                        
+                    </span>
+                        
+                    
+                    <div class="form__password__showPassword">
+                        <label for="showPassword__input" class="showPassword__label">
+                            <div class="checkbox__wrapper">
+                                <input 
+                                type="checkbox"
+                                class="showPassword__label__checkbox"
+                                name="showPassword__input" id="showPassword__checkbox"> 
+                            </div>
+
+                            Mostrar contraseña
+                        </label>
+                    </div>
+
+                    <div class="buttons__container">
+                        <button type="button" class="twitter__button button__forgotPassword"> ¿Olvidaste la contraseña? </button>
+                        <button type="button" class="twitter__button twitter__button--blue button__next"> Siguiente 
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <label class="footer__language" for="language-list">
+            <select name="language-list" id="language-list">
+                <option value="deutsch"> Deutsch </option>
+                <option value="english"> English </option>
+                <option value="spanishS"> Espa;ol (Espa;a) </option>
+                <option value="spanishL"> Espa;ol (Latinoamerica) </option>
+                <option value="filipine"> Filipino </option>
+            </select>
+        </label>
+
+        <ul class="footer__list" >
+            <li>
+                <a href="#"> Ayuda </a>
+            </li>
+            <li>
+                <a href="#"> Privacidad </a>
+            </li>
+            <li>
+                <a href="#"> Condiciones </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="../js/DOM.js"></script>
+    <script src="../js/dataBaseGoogle.js"></script>
+    <script src="../js/registerGoogle.js"></script>
+</body>
+</html>

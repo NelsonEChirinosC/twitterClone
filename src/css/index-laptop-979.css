@@ -1,0 +1,64 @@
+main{
+    display: grid;
+    grid-template-columns: minmax(214px, 1039px) minmax(790px,846px);
+    min-height: 95vh;
+}
+
+.main {
+    width: 92%;
+    order: 2;
+}
+
+.header{
+    margin: 55px auto;
+    /* margin-top: 60px; */
+}
+
+.header__icon{
+    font-size: 4rem;
+}
+
+.main__titles{
+    width: 100%;
+}
+
+h1.titles__title{
+    font-size: 6.1rem;
+}
+
+h2.titles__title{
+    font-size: 2.9rem;
+}
+
+.main__buttons{
+    max-width: 320px;
+}
+
+.main__button{
+    max-width: 320px;
+}
+
+.main__background{
+    order: 1;
+    height: 100%;
+}
+
+.main__background__icon i{
+    font-size: min(20vw, 36rem);
+    /* font-size: 17rem; */
+}
+
+.footer{
+    width: 100%;
+    padding: 0 12px;
+}
+
+.footer__list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer__list li {
+    width: max-content;
+}

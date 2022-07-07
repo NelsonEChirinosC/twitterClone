@@ -8,6 +8,7 @@
     <!-- Styles  -->
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index-laptop-979.css" media="(min-width:980px)">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,27 +18,31 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/cb5f356e9e.js" crossorigin="anonymous"></script>
 
+    <!-- Title -->
+    <link rel="icon" type="image/x-icon" href="https://cdn.icon-icons.com/icons2/836/PNG/128/Twitter_icon-icons.com_66803.png">
+    
     <title>Twitter</title>
 </head>
 <body>
-    <header class="header">
-        <span class="header__icon" ><i class="fa-brands fa-twitter"></i></span>
-    </header>
     <main>
         <section class="main">
+            <div class="header">
+                <span class="header__icon" ><i class="fa-brands fa-twitter"></i></span>
+            </div>
+
             <div class="main__titles">
                 <h1 class="titles__title"> Lo que esta pasando ahora </h1>
                 <h2 class="titles__title"> Unete a Twitter hoy mismo.</h2>
             </div>
             <div class="main__buttons">
-                <button class="main__button main__button--white button__google">
+                <button class="main__button twitter__button--white button__google">
                     <span>
                         <!-- <i class="fa-brands fa-google"></i>  -->
                         <a href="https://www.flaticon.es/iconos-gratis/google" title="google iconos" data-author="Google iconos creados por Freepik - Flaticon"> <img class="button__google--icon" src="../icon/google.png" alt=""> </a>
                         Registrarse con Google
                     </span>
                 </button>
-                <button class="main__button main__button--white
+                <button class="main__button twitter__button--white
                 button__apple">
                     <span><i class="fa-brands fa-apple"></i>
                         Registrarse con Apple
@@ -45,14 +50,14 @@
                 </button>
                 <div class="main__o"> <span>o</span> </div>
 
-                <button class="main__button main__button--blue text--overflow"> Registraste con el numero de telefono
+                <button class="main__button twitter__button--blue text--overflow"> Registraste con el numero de telefono o...
                 </button>
                 <p class="main__terms"> Al registrarte, aceptas los <a href="#">Términos de servicio</a> y la <a href="#">Política de privacidad</a>, incluida la política de <a href="#">Uso de Cookies</a>.</p>
             </div>
     
             <div class="main__sesion">
-                <h3>Ya tienes una cuenta?</h3>
-                <button class="main__button main__button--white button__sesion"> Iniciar sesion </button>
+                <h3>¿Ya tienes una cuenta?</h3>
+                <button class="main__button twitter__button--white button__sesion"> Iniciar sesion </button>
             </div>
         </section>
         <section class="main__background">
@@ -80,8 +85,11 @@
             <li> <a href="#"> Desarrolladores</a> </li>
             <li> <a href="#"> Guia</a> </li>
             <li> <a href="#"> Configuracion</a> </li>
+            <li> <a href="#"> 2022 Twitter, Inc</a> </li>
         </ul>
-        <p> 2022 Twitter, Inc </p>
     </footer>
+
+    <script src="./js/DOM.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

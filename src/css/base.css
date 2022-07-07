@@ -1,7 +1,12 @@
 :root{
     --brand-color: #1d9bf0;
+    --brand-color-hover: rgba(26,140,216);
     --anchor-color: #39bff6;
+    --anchor-color-google: #1a73e8;
     --button-active-white: #b8e5f7;
+    --gray-twitter: #536471;
+    --border-input-color: #dadce0;
+    --error-input: #d93025;
 }
 
 *{
@@ -10,8 +15,11 @@
     padding: 0;
 }
 
-body {
+html{
     font-size: 62.5%;
+}
+
+body {
     font-family: Arial, Helvetica, sans-serif
 }
 
@@ -22,3 +30,38 @@ a{
 ul {
     list-style: none;
 }
+
+/* Buttons */
+
+.twitter__button{
+    font-size: 1.6rem;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: none;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.twitter__button--white{
+    border: 1px solid #d5dee2;
+    background-color: white;
+}
+
+.twitter__button--blue{
+    font-weight: 500;
+    border: none;
+    background-color: var(--brand-color);
+    color: white;
+}
+
+.twitter__button--blue:hover{
+    background-color: var(--brand-color-hover);
+}
+
+.text--overflow{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
