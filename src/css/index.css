@@ -197,9 +197,11 @@ h2.titles__title{
     text-decoration: underline;
 }
 
-.footer p{
-    margin-top: 12px;
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--gray-twitter);
+.footer__list li:last-child a {
+    cursor: text;
 }
+
+.footer__list li:last-child a:active{
+    text-decoration: none;
+}
+

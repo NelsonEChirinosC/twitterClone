@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/registerGoogle.css">
     <link rel="stylesheet" href="../css/registerGoogle-media-min600.css" media="(min-width:600px)">
+    <link rel="stylesheet" href="../css/registerGoogle-media-max455.css" media="(max-width:455px)" >
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/cb5f356e9e.js" crossorigin="anonymous"></script>
@@ -33,7 +34,7 @@
 
                 <img src="../../img/googleTitle2-removebg-preview.png" alt="Imagen de google">
                 <h2 class="main__titles__principalTitle">Acceder</h2>
-                <h3 class="main__titles__secundaryTitle active" >Usa tu Cuenta de Google</h3>
+                <h3 class="main__titles__secundaryTitle" >Usa tu Cuenta de Google</h3>
 
                 <button class="twitter__button twitter__button--white button__titles__password"> 
                     <span class="titles__password__userIcon">
@@ -48,11 +49,14 @@
             </section>
             <section class="main__inputs">
 
-                <form class="main__inputs__form form__email" action="">
+                <form class="main__inputs__form form__email display__none" action="">
     
                     <label class="inputs__form__label" for="email-input">
-                        <input id="email-input" class="inputs__form__general" type="text" placeholder="">
-                        <span class="inputs__form__placeholder"> Correo electronico o telefono </span>
+                        <input 
+                            id="email-input" 
+                            class="inputs inputs__form__general" 
+                            type="text" placeholder="">
+                        <span class="accessEmailPlaceholder inputs__form__placeholder"> Correo electronico o telefono </span>
                     </label>
                     <span class="error__input" ></span>
                     <p class="main__inputs__forgotEmail"> <a href="#">¿Olvidaste el correo electrónico?</a> </p>
@@ -71,18 +75,18 @@
                     </div>
                 </form>
 
-                <form class="main__inputs__form form__password move" action="">
+                <form class="main__inputs__form form__password display__none" action="">
     
                     <label class="inputs__form__label" for="password__input">
                         <input 
-                        id="password__input" class="inputs__form__general" 
+                        id="password__input" 
+                        class="inputs inputs__form__general" 
                         type="password" 
                         placeholder="" />
                         
-                        <span class="inputs__form__placeholder"> Ingresa tu contraseña </span>
+                        <span class=" accessPasswordPlaceholder inputs__form__placeholder"> Ingresa tu contraseña </span>
                     </label>
-                    <span class="error__input active" > 
-                        
+                    <span class="error__input" > 
                     </span>
                         
                     
@@ -100,11 +104,104 @@
                     </div>
 
                     <div class="buttons__container">
-                        <button type="button" class="twitter__button button__forgotPassword"> ¿Olvidaste la contraseña? </button>
+                        <button type="button" class="button__light__theme twitter__button button__forgotPassword"> ¿Olvidaste la contraseña? </button>
                         <button type="button" class="twitter__button twitter__button--blue button__next"> Siguiente 
                         </button>
                     </div>
                 </form>
+
+                <form action="" class="main__inputs__form main__create__form ">
+                    <div class="nameAndLast">
+                        <label for="create__name__input" class="inputs__form__label">
+                            <input 
+                            type="text" 
+                            id="create__name__input" 
+                            class="inputs inputs__form__general createInputs">
+
+                            <span class="createName__placeholder inputs__form__placeholder">Nombre</span>
+                        </label>
+                        <label for="create__lastName__input" class="inputs__form__label">
+                            <input 
+                            type="text" 
+                            id="create__lastName__input" 
+                            class="inputs inputs__form__general createInputs">
+
+                            <span class="createLastName__placeholder inputs__form__placeholder">Apellido</span>
+                        </label>
+                        <span class="error__input" > 
+                        </span>
+                    </div>
+
+                    <label for="create__email__input" class="inputs__form__label">
+                        <div class="create__input__special">
+                            <input 
+                            type="text" 
+                            id="create__email__input" 
+                            class="inputs inputs__form__general createInputs input__marginToDescription">
+    
+                            <span class="createEmail__placeholder inputs__form__placeholder">Nombre de usuario</span>
+
+                            <span class="createEmail__gmailText"> @gmail.com</span>
+
+                        </div>
+                    </label>
+                    <span class="error__input" > 
+                    </span>
+                    <span class="create__input__specialSpan create__input__description"> 
+                        Puedes usar letras, números y signos de puntuación 
+                    </span>
+
+                    <button type="button" data-gmail="true" class="twitter__button button__light__theme create__button__useActualEmail"> Prefiero usar mi dirección de correo electrónico actual </button>
+
+                    <div class="passwordAndConfirm">
+                        <label for="create__password__input" class="inputs__form__label">
+                            <input 
+                            type="password" 
+                            id="create__password__input" 
+                            class="inputs inputs__form__general createInputs">
+    
+                            <span class="createPassword__placeholder inputs__form__placeholder">Contraseña</span>
+                        </label>
+
+                        <label for="create__confirm__input" class="inputs__form__label">
+                            <input 
+                            type="password" 
+                            id="create__confirm__input" 
+                            class="inputs inputs__form__general createInputs input__marginToDescription">
+    
+                            <span class="createConfirm__placeholder inputs__form__placeholder">Confirmación</span>
+                        </label>
+                        <span class="error__input" > 
+                        </span>
+
+                        <span class="create__input__description">
+                            Usa 8 o más caracteres con una combinación de letras, números y símbolos
+                        </span>
+
+                        <label for="showPassword__input" class="showPassword__label create__showPassword__label create__checkbox">
+                            <div class="checkbox__wrapper create__checkbox__wrapper">
+                                <input 
+                                type="checkbox"
+                                class="showPassword__label__checkbox"
+                                name="showPassword__input" 
+                                id="create__showPassword__checkbox"> 
+                            </div>
+                            <span>
+                                Mostrar contraseña
+                            </span>
+                        </label>
+
+                    </div>
+
+                    <div class="buttons__container buttons__container__create">
+                        <button type="button" class="twitter__button button__light__theme button__toEmailSection"> Acceder a tu cuenta en su lugar </button>
+                        <button type="button" class="twitter__button twitter__button--blue button__next button__create__next"> Siguiente 
+                        </button>
+                    </div>
+
+                </form>
+
+
             </section>
         </div>
     </main>

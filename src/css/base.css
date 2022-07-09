@@ -59,6 +59,20 @@ ul {
     background-color: var(--brand-color-hover);
 }
 
+.button__light__theme{
+    padding: 10px 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background-color: #fff;
+    color: var(--anchor-color-google);
+
+}
+
+.button__light__theme:hover{
+    background-color: #f6fafe;
+}
+
+
 .text--overflow{
     overflow: hidden;
     white-space: nowrap;

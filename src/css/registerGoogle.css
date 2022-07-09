@@ -25,6 +25,10 @@ main{
     text-align: center;
 }
 
+.main__titles.createAccountSection{
+    align-items: flex-start;
+}
+
 .main__titles > img {
     width: 80px;
     margin-bottom: 22px;
@@ -37,7 +41,6 @@ main{
 }
 
 .main__titles__secundaryTitle{
-    display: none;
     font-size: 1.6rem;
     font-weight: 500;
 }
@@ -98,12 +101,11 @@ main{
 }
 
 .form__password{
-    display: none;
     left: 500px;
 }
 
 .form__password.active {
-    display: none;
+    /* display: none; */
     left: 0;
 }
 
@@ -122,8 +124,26 @@ main{
     transition: all 0.2s;
 }
 
+.create__input__description{
+    display: block;
+    padding-left: 8px;
+    font-size: 1.2rem;
+    color: #555;
+}
 
+.create__button__useActualEmail{
+    margin: 6px 0 28px 0;
+    transition: all 0.1s;
+}
 
+.createInputs{
+    padding: 7px 8px;
+    margin-bottom: 24px;
+}
+
+.input__marginToDescription {
+    margin-bottom: 4px;
+}
 
 .inputs__form__placeholder{
     position: absolute;
@@ -140,7 +160,13 @@ main{
     cursor: text;
 }
 
-.inputs__form__general:focus{
+.createInputs + .inputs__form__placeholder{
+    margin-top: 10px;
+    font-size: 1.4rem;   
+}
+
+.inputs__form__general:focus,
+.create__input__special.focused{
     outline: 2px solid var(--anchor-color-google);
 }
 
@@ -148,22 +174,87 @@ main{
     outline: 1px solid var(--error-input);
 }
 
-.inputs__form__general.error:focus{
+.inputs__form__general.error:focus,
+.create__input__special.focused.error{
     outline: 2px solid var(--error-input);
 }
 
-.inputs__form__general:focus + .inputs__form__placeholder, 
-.inputs__form__placeholder.filledContent{
+.inputs__form__general:focus + .inputs__form__placeholder{
     width: max-content;
     padding: 0 6px;
     transform: translate(-22px,-28px) scale(0.8);
     color: var(--anchor-color-google);
 }
 
+.createInputs:focus + .inputs__form__placeholder,
+.createInputs + .inputs__form__placeholder.filledContent{
+    padding: 0 4px;
+    transform: translate(-16px,-19.5px) scale(0.7);
+}
+
+/* Especial Email Input in the Create Account Section */
+
+.create__input__special{
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    border: 1px solid var(--border-input-color);
+    margin-bottom: 4px;
+}
+
+/* .create__input__special.focused{
+    border: 0.1rem solid var(--anchor-color-google);
+} */
+
+#create__email__input {
+    border: none;
+}
+
+#create__email__input:focus{
+    outline: none;
+}
+
+.createEmail__gmailText{
+    font-size: 1.4rem;
+    margin-right: 12px;
+}
+
+#create__email__input:focus + .inputs__form__placeholder,
+#create__email__input + .inputs__form__placeholder.filledContent {
+    transform: translate(-26px,-19.5px) scale(0.7);
+}
+
+#create__email__input:focus.withOutGoogle + .inputs__form__placeholder,
+#create__email__input.withOutGoogle + .inputs__form__placeholder.filledContent{
+    transform: translate(-40px,-19.5px) scale(0.7);
+}
+
+#create__password__input:focus + .inputs__form__placeholder,
+#create__password__input + .inputs__form__placeholder.filledContent {
+    transform: translate(-20px,-19.5px) scale(0.7);
+}
+
+#create__confirm__input:focus + .inputs__form__placeholder,
+#create__confirm__input + .inputs__form__placeholder.filledContent {
+    transform: translate(-22px,-19.5px) scale(0.7);
+}
+/* .createInputs:focus.input__marginToDescription + .inputs__form__placeholder{
+    transform: translate(-24px,-20px) scale(0.7);
+} */
+
+.inputs__form__placeholder.filledContent{
+    width: max-content;
+    padding: 0 6px;
+    transform: translate(-22px,-28px) scale(0.8);
+    color: #555;
+}
+
 .inputs__form__general:focus.error + .inputs__form__placeholder, 
 .inputs__form__general.error + .inputs__form__placeholder.filledContent{
     color: var(--error-input);
 }
+
+
 
 .error__input{
     display: none;
@@ -209,6 +300,14 @@ main{
     gap: 1.9rem;
     font-size: 1.4rem;
     cursor: pointer;
+}
+
+.create__showPassword__label{
+    gap: 2.8rem ;
+}
+
+.create__checkbox{
+    margin-top: 10px;
 }
 
 .checkbox__wrapper{
@@ -295,6 +394,10 @@ main{
     color: var(--anchor-color-google);
 }
 
+.buttons__container__create{
+    margin-top: 38px;
+}
+
 
 .button__createAccount:hover,
 .button__forgotPassword:hover{
@@ -305,9 +408,9 @@ main{
     background-color: #e4effc;
 }
 
-.buttons__container .button__forgotPassword:hover{
+/* .buttons__container .button__forgotPassword:hover{
     background-color: #f6fafe;
-}
+} */
 
 .button__next{
     background-color: var(--anchor-color-google);
@@ -345,7 +448,6 @@ main{
     padding-right: 16px;
     color: var(--gray-twitter)
 }
-
 
 
 /*
@@ -414,6 +516,10 @@ Loading google register
 
 .active{
     display: block;
+}
+
+.display__none{
+    display: none;
 }
 
 
