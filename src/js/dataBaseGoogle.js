@@ -2,8 +2,8 @@ const usersGoogle = [
 {
     name: 'Nelson',
     lastName: 'Chirinos',
-    email: 'ezequieln_@gmail.com',
-    phone: '04144188697',
+    email: 'ezequieln@gmail.com',
+    phone: '+584144188697',
     password: 'todoNada#56',
     emailRecuperation: 'ezequiel7890@hotmail.com',
     dateOfBirth: {
@@ -17,7 +17,7 @@ const usersGoogle = [
     name: 'Monica',
     lastName: 'Pulgarin',
     email: 'mst0512@gmail.com',
-    phone: '04241164228',
+    phone: '+814241164228',
     password: 'monicaGoogle%56',
     emailRecuperation: '',
     dateOfBirth: {
@@ -31,7 +31,7 @@ const usersGoogle = [
     name: 'Dairen',
     lastName: 'Cepeda',
     email: 'dairen89780@gmail.com',
-    phone: '04164568900',
+    phone: '+574164568900',
     password: '89782#$ola',
     emailRecuperation: '',
     dateOfBirth: {
@@ -61,7 +61,7 @@ const errorMessageGoogle = {
             }
         },
         createUserGoogle:{
-            emailAndpassword:{
+            emailAndPassword:{
                 name:{
                     empty: `<i class="fa-solid fa-circle-exclamation"></i>
                             <p> Ingrese el nombre </p>
@@ -89,7 +89,7 @@ const errorMessageGoogle = {
                             `,
                     invalidCharacter: `
                             <i class="fa-solid fa-circle-exclamation"></i>
-                            <p> Tu nombre debe tener entre 6 y 30 caracteres de longitud. </p>
+                            <p> Solo se permiten letras (a-z), números (0-9). </p>
                             `,
                     alredyExits: `
                             <i class="fa-solid fa-circle-exclamation"></i>
@@ -100,6 +100,11 @@ const errorMessageGoogle = {
                             <i class="fa-solid fa-circle-exclamation"></i>
                             <p> No olvides incluir la "@". </p>
                             `,
+                    notOneSymbol:`
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <p> Ingresa una dirección de correo electrónico con sólo una "@". </p>
+
+                                `,
                     notNameUser: `
                             <i class="fa-solid fa-circle-exclamation"></i>
                             <p> Ingresa un nombre de usuario antes de la "@". </p>
@@ -119,7 +124,7 @@ const errorMessageGoogle = {
                     empty: `<i class="fa-solid fa-circle-exclamation"></i>
                             <p> Ingrese una contraseña </p>
                             `,
-                    invalid: `
+                    invalidLong: `
                             <i class="fa-solid fa-circle-exclamation"></i>
                             <p> Usa 8 caracteres o más para tu contraseña </p>
                             `,
@@ -131,6 +136,40 @@ const errorMessageGoogle = {
                             <i class="fa-solid fa-circle-exclamation"></i>
                             <p> Confirma tu contraseña </p>
                             `
+                }
+            },
+            phoneAndDate:{
+                phone:{
+                    invalidNumber: `
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p> Número invalido </p>
+                    `,
+                }, 
+                date:{
+                    empty: `
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p> Ingresa la fecha de nacimiento completa. </p>
+                    `,
+                    invalidDate: `
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p> Ingresa una fecha de nacimiento valida </p>
+                    `,
+                },
+                genre:{
+                    empty: `
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p> Selecciona un genero. </p>
+                    `,
+                    emptyNameGenre: `
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p> Indica el género con el que más te identificas. </p>
+                    `,
+                }, 
+                pronoun:{
+                    empty: `
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p> Selecciona un pronombre. </p>
+                    `,
                 }
             }
         }

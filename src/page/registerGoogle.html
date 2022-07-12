@@ -29,15 +29,36 @@
             <div class="main__loading__bar--blue"></div>
         </div>
 
+        <!-- 
+            
+            
+            CHANGE THIS WHEN WORKING WITH A PHASE:
+
+             Working with Phase 2, change to Original:
+                remove createAccountSection to main__titles
+                remove display__none to main__titles__secundaryTitle
+                remove display__none to main__inputs__form
+                add display__none to main__create__formP2
+                remove actualView to main__create__formP2
+                add active to main__titles__secundaryTitle
+                 
+        -->
+
         <div class="main">
             <section class="main__titles">
 
                 <img src="../../img/googleTitle2-removebg-preview.png" alt="Imagen de google">
                 <h2 class="main__titles__principalTitle">Acceder</h2>
-                <h3 class="main__titles__secundaryTitle" >Usa tu Cuenta de Google</h3>
+                <h3 class="main__titles__secundaryTitle active" >Usa tu Cuenta de Google</h3>
+                <h3 class = "createAccountSection__secundaryTitle display__none">
+                    <span class="titles__wrapper__userIcon"> 
+                        <i class="iconCreateAccountSectionP2__positionRelative fa-solid fa-user"></i>
+                    </span>
+                    <span class="createAccountSection__emailUser"> </span>
+                </h3>
 
                 <button class="twitter__button twitter__button--white button__titles__password"> 
-                    <span class="titles__password__userIcon">
+                    <span class="titles__wrapper__userIcon">
                         <i class="fa-solid fa-user"></i>
                     </span>
                     <span id="registerGoogle__emailUser">
@@ -49,7 +70,7 @@
             </section>
             <section class="main__inputs">
 
-                <form class="main__inputs__form form__email display__none" action="">
+                <form class="main__inputs__form form__email actualView" action="">
     
                     <label class="inputs__form__label" for="email-input">
                         <input 
@@ -110,7 +131,7 @@
                     </div>
                 </form>
 
-                <form action="" class="main__inputs__form main__create__form ">
+                <form action="" class="main__inputs__form main__create__formP1 display__none">
                     <div class="nameAndLast">
                         <label for="create__name__input" class="inputs__form__label">
                             <input 
@@ -147,6 +168,14 @@
                     </label>
                     <span class="error__input" > 
                     </span>
+                    <div class="availableEmail display__none">
+                        <span>Disponible:</span>
+                        <ul class="availableEmail__list">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
                     <span class="create__input__specialSpan create__input__description"> 
                         Puedes usar letras, números y signos de puntuación 
                     </span>
@@ -174,7 +203,7 @@
                         <span class="error__input" > 
                         </span>
 
-                        <span class="create__input__description">
+                        <span class="create__password__span create__input__description">
                             Usa 8 o más caracteres con una combinación de letras, números y símbolos
                         </span>
 
@@ -200,6 +229,173 @@
                     </div>
 
                 </form>
+
+                <form action="" class="main__inputs__form main__create__formP2 display__none">
+                    <div class="fomrP2__phoneWrapper">
+
+                        <button class="country__phone__button" type="button"> 
+                            <img class="icon__countryImg" src="https://flagpedia.net/data/flags/emoji/twitter/256x256/ve.png" alt="VE">
+                            <i class="fa-solid fa-caret-down"></i>
+                        </button>
+                        <ul class="country__phone__list"> 
+                            <li class="country__phone__picked"> 
+                                <img class="icon__countryImg" src="https://flagpedia.net/data/flags/emoji/twitter/256x256/ve.png" alt="VE">
+                                <span> Venezuela (+58) </span> 
+                            </li>
+
+                            <hr>
+
+                            <li> 
+                                <img class="icon__countryImg" src="https://images.emojiterra.com/twitter/v14.0/512px/1f1e8-1f1f4.png" alt="CO">
+                                <span> Colombia (+57) </span>  
+                            </li>
+
+                            <li> 
+                                <img class="icon__countryImg" src="https://images.emojiterra.com/twitter/512px/1f1fa-1f1f8.png" alt="US"> 
+                                <span> Estados Unidos (+1) </span>  
+                            </li>
+                            
+                            <li> 
+                                <img class="icon__countryImg japan" src="https://icons.iconarchive.com/icons/wikipedia/flags/1024/JP-Japan-Flag-icon.png" alt="JP"> 
+                                <span> Japon (+81) </span>  
+                            </li>
+                            
+                            <li> 
+                                <img class="icon__countryImg" src="https://flagpedia.net/data/flags/emoji/twitter/256x256/ve.png" alt="VE">
+                                <span> Venezuela (+58) </span>  
+                            </li>
+
+                        </ul>
+                        
+                        <label for="create__phone__input" class="inputs__form__label">
+                            <input 
+                            type="number" 
+                            id="create__phone__input" 
+                            class="inputs inputs__form__general createInputs">
+
+                            <span class="createPhone__placeholder inputs__form__placeholder"> Número de teléfono (opcional)</span>
+                        </label>
+
+                    </div>
+                    <span class="error__input" > 
+                    </span>
+                    <span class="create__phone__span create__input__description"> 
+                        Google utilizará este número únicamente como medida de seguridad de tu cuenta. Nadie podrá verlo. Luego podrás elegir si deseas usarlo para otros fines.
+                    </span>
+
+                    <label for="create__recuperationEmail__input" class="inputs__form__label">
+                        <input 
+                        type="text" 
+                        id="create__recuperationEmail__input" 
+                        class="inputs inputs__form__general createInputs input__marginToDescription">
+    
+                        <span class="createRecuperationEmail__placeholder inputs__form__placeholder">Direccion de correo de recuperación (opcional)</span>
+                    </label>
+                    <span class="error__input" > 
+                    </span>
+                    <span class="create__input__recuperationSpan create__input__description"> 
+                         La usaremos para proteger tu cuenta
+                    </span>
+
+                    <div class="DateOfBirth">
+                        <label for="create__dayBirth__input" class="inputs__form__label">
+                            <input 
+                            type="number" 
+                            id="create__dayBirth__input" 
+                            class="inputs inputs__form__general createInputs">
+    
+                            <span class="createDayOfBirth__placeholder inputs__form__placeholder">Día</span>
+                        </label>
+
+                        <label for="create__months__input" class="inputs__form__label">
+
+                            <select name="create__months__input" class="selectCreateInputs" id="create__months__select">
+                                <option class="option__toDelete" value="default"> Mes </option>
+                                <option value="january"> Enero </option>
+                                <option value="february"> Febrero </option>
+                                <option value="march"> Marzo </option>
+                                <option value="april"> Abril </option>
+                                <option value="may"> Mayo </option>
+                                <option value="june"> Junio </option>
+                                <option value="july"> Julio </option>
+                                <option value="august"> Agosto </option>
+                                <option value="september"> Septiembre </option>
+                                <option value="october"> Octubre </option>
+                                <option value="november"> Noviembre </option>
+                                <option value="december"> Diciembre </option>
+                            </select>
+                        </label>
+
+                        <label for="create__yearBirth__input" class="inputs__form__label">
+                            <input 
+                            type="number" 
+                            id="create__yearBirth__input" 
+                            class="inputs inputs__form__general createInputs">
+    
+                            <span class="createYearOfBirth__placeholder inputs__form__placeholder">Año</span>
+                        </label>
+                        
+                    </div>
+                    <span class="error__input" > 
+                    </span>
+
+                    <span class="create__dayOFBirth__span create__input__description">
+                        Tu fecha de nacimiento
+                    </span>
+
+                    <label for="create__genre__input" class="inputs__form__label">
+
+                        <select name="create__genre__select" class="selectCreateInputs" id="create__genre__select">
+                            <option class="option__toDelete" value="default"> Género </option>
+                            <option value="female"> Mujer </option>
+                            <option value="male"> Hombre </option>
+                            <option value="notSay"> Prefiero no decirlo </option>
+                            <option value="custom"> Personalizado </option>
+                        </select>
+                    </label>
+                    <span class="error__input" > 
+                    </span>
+
+                    <div class="formP2__customGenre display__none">
+                        <label for="create__nameGenre__input" class="inputs__form__label">
+    
+                            <input 
+                            type="text" 
+                            id="create__nameGenre__input" 
+                            class="inputs inputs__form__general createInputs">
+    
+                            <span class="createNameGenre__placeholder inputs__form__placeholder">
+                                ¿Cuál es tu género?
+                            </span>
+                        </label>
+                        <span class="error__input" > 
+                        </span>
+
+                        <label for="create__referAs__input" class="inputs__form__label">
+
+                            <select name="create__referAs__input" class="selectCreateInputs" id="create__referAs__input">
+                                <option class="option__toDelete" value="default"> Referirse a mi como </option>
+                                <option value="female"> Mujer </option>
+                                <option value="male"> Hombre </option>
+                                <option value="april"> Otros </option>
+                            </select>
+                        </label>
+                        <span class="error__input" > 
+                        </span>
+
+                    </div>
+                    
+                    <button type="button" class="twitter__button button__light__theme button__anchor"> <a href="https://support.google.com/accounts/answer/1733224?hl=es-419"> Por qué solicitamos esta informacion </a></button>
+
+                    <div class="buttons__container buttons__container__create">
+                        <button type="button" class="twitter__button button__light__theme button__toCreateAccountSectionP1"> Atras </button>
+                        <button type="button" class="twitter__button twitter__button--blue button__next button__create__next"> Crear 
+                        </button>
+                    </div>
+
+                </form>
+
+
 
 
             </section>
@@ -230,6 +426,7 @@
     </footer>
 
     <script src="../js/DOM.js"></script>
+    <script src="../js/dataBaseGeneral.js"></script>
     <script src="../js/dataBaseGoogle.js"></script>
     <script src="../js/registerGoogle.js"></script>
 </body>
