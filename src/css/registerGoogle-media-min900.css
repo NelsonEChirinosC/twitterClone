@@ -1,0 +1,46 @@
+/* body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+main.inCreateAccount{
+    display: flex;
+    width: 768px;
+}
+
+main.inCreateAccount .main{
+    width: 448px;
+    min-width: 448px;
+    padding: 0 40px;
+}
+
+main.inCreateAccount .mediaLaptop__forCreateAccount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+main.inCreateAccount .mediaLaptop__forCreateAccount__content{
+    display: grid;
+    place-items: center;
+}
+
+main.inCreateAccount .mediaLaptop__forCreateAccount__img{
+    width: 244px;
+    height: 244px;
+}
+
+main.inCreateAccount .mediaLaptop__forCreateAccount__text{
+    font-size: 1.6rem;
+    line-height: 1.4286;
+    font-weight: 300;
+    text-align: center;
+    color: #202124;
+}
+
+.footer{
+    width: 768px;
+    max-width: 768px;
+}

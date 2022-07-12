@@ -300,6 +300,7 @@ main{
 .availableEmail {
     display: flex;
     align-items: center;
+    
     gap: 8px;
     margin-top: 12px;
     font-size: 1.4rem;
@@ -307,6 +308,7 @@ main{
 
 .availableEmail__list{
     display: flex;
+    flex-wrap: wrap;
     gap: 2px;
 }
 
@@ -679,6 +681,10 @@ label[for="create__phone__input"]{
 .button__anchor a {
     padding: 10px 10px;
     color: var(--anchor-color-google);
+}
+
+.mediaLaptop__forCreateAccount{
+    display: none;
 }
 
 

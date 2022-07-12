@@ -14,10 +14,22 @@ const googleButtonIndex = document.querySelector('.button__google');
 /*
     REGISTER GOOGLE VARIABLES
 */
+
+// Tags
+const mainRegisterGoogle = document.querySelector('main');
+
 // Div
 const divSpecialInputEmail = document.querySelector('.create__input__special');
 const divAvailableEmail = document.querySelector('.availableEmail');
 const divCustomGenre = document.querySelector('.formP2__customGenre');
+
+// Images 
+const mediaLaptopForCreateAccountImg = document.querySelector('.mediaLaptop__forCreateAccount__img');
+
+//Figcaption
+const mediaLaptopForCreateAccountText = document.querySelector('.mediaLaptop__forCreateAccount__text');
+
+
 
 // Error modal
 const [errorModal, 

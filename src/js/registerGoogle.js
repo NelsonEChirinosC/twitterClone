@@ -1,11 +1,11 @@
 /*
-    1.- ARREGLAR LOS LI DE LAS SUGERENCIAS DE EMAIL, YA QUE SI EL NOMBRE Y EL APELLIDO SON LARGOS SE PASA EL WIDTH Y AL TENER OVERFLOW HIDDEN NO SE VE
+    1.- ARREGLAR LOS LI DE LAS SUGERENCIAS DE EMAIL, YA QUE SI EL NOMBRE Y EL APELLIDO SON LARGOS SE PASA EL WIDTH Y AL TENER OVERFLOW HIDDEN NO SE VE LISTO
 
-    2.- HACER EL MEDIA QUERY DE LAS SECCIONES DE CREACION DE CUENTA
+    2.- HACER EL MEDIA QUERY DE LAS SECCIONES DE CREACION DE CUENTA LISTO
 
-    3.- NO PERMITIR QUE AL COLOCAR UN EMAIL INVALIDO, PASAR A LA FASE2, ESTA DEBE DE TENER UNA VERIFICACION PARA QUE NO AVANCE
+    3.- NO PERMITIR QUE AL COLOCAR UN EMAIL INVALIDO, PASAR A LA FASE2, ESTA DEBE DE TENER UNA VERIFICACION PARA QUE NO AVANCE LISTO
 
-    4.- HACER UN LOWER CASE PARA VERIFICAR SI HAY COINCIDENCIA CON LA BASE DE DATOS, TODOS DEBERIAN DE ESTAR MINUSCULAS lo cual Ezequieln@gmail.com debe coincider con ezequieln@gmail.com
+    4.- HACER UN LOWER CASE PARA VERIFICAR SI HAY COINCIDENCIA CON LA BASE DE DATOS, TODOS DEBERIAN DE ESTAR MINUSCULAS lo cual Ezequieln@gmail.com debe coincider con ezequieln@gmail.com LISTO
 */ 
 
 /*
@@ -105,7 +105,9 @@ function verificationCreateEmailInput({foundError}){
             activeError(spanSpecialInputEmail, errorCreateEmailModal, createInputSpecial);
             errorCreateEmailModal.innerHTML = errorCreateEmailMsg.longFail;
 
-            return
+            foundError = true
+
+            return foundError
         }
 
         // Character Error
@@ -113,7 +115,9 @@ function verificationCreateEmailInput({foundError}){
             activeError(spanSpecialInputEmail, errorCreateEmailModal, createInputSpecial);
             errorCreateEmailModal.innerHTML = errorCreateEmailMsg.invalidCharacter;
             
-            return
+            foundError = true
+            
+            return foundError
         }
 
         emailUser = `${createEmailValue}@gmail.com`; 
@@ -126,9 +130,9 @@ function verificationCreateEmailInput({foundError}){
         
         verificationOtherEmailError( spanSpecialInputEmail, errorCreateEmailModal, createEmailInput);
 
-        if(foundError) {return}
+        if(foundError) {return foundError}
 
-        emailUser = createEmailValue;
+        emailUser = createEmailValue.toLowerCase();
     }
 
     //// Alredy in the database
@@ -140,13 +144,14 @@ function verificationCreateEmailInput({foundError}){
         activeError(spanSpecialInputEmail, errorCreateEmailModal, createInputSpecial);
         errorCreateEmailModal.innerHTML = errorCreateEmailMsg.alredyExits;
 
+        foundError = true
 
         // Suggest available user only with @gmail
         if(buttonActualEmail.dataset.gmail == 'true'){
 
             let option0, option1, option2;
-            const nameValue = replaceInvalidCha(createNameInput.value.trim());
-            const lastNameValue = replaceInvalidCha(createLastNameInput.value.trim());
+            const nameValue = replaceInvalidCha(createNameInput.value.trim()).toLowerCase();
+            const lastNameValue = replaceInvalidCha(createLastNameInput.value.trim()).toLowerCase();
 
             if(nameValue != '' && lastNameValue != ''){
 
@@ -175,11 +180,13 @@ function verificationCreateEmailInput({foundError}){
 
         }
 
+        return foundError
+
     }
 
     function isEmailInDataBaseFunc(emailValue){
         const result = emailsInDataBase.some((email)=> {
-            return email == emailValue.toLowerCase();
+            return email.toLowerCase() == emailValue.toLowerCase();
         });
 
         return result;
@@ -716,6 +723,7 @@ function simulateApiToAccountSectionP1(){
     createFormP1.classList.remove('display__none');
     mainTitle.innerHTML = `Crear tu cuenta de Google`;
     secondTitle.classList.remove('active');
+    mainRegisterGoogle.classList.add('inCreateAccount');
 
 }
 
@@ -742,6 +750,7 @@ function simulateApiToEmailSectionFromP1(){
     mainTitlesWrapper.classList.remove('createAccountSection');
     createFormP1.classList.add('display__none');
     mainTitle.innerHTML = `Acceder`;
+    mainRegisterGoogle.classList.remove('inCreateAccount');
     // secondTitle.classList.remove('display__none');
     emailInput.focus()
 
@@ -750,6 +759,24 @@ function simulateApiToEmailSectionFromP1(){
 buttonToCreateSectionP2.addEventListener('click', toAccountSectionP2)
 
 function toAccountSectionP2(){
+
+    
+
+   // Swipe to the Phase 2 Section
+    mainLoadingBar.classList.add('active');
+    mainClassWrapper.classList.add('main__loading');
+
+    setTimeout( () => {
+        simulateApiToAccountSectionP2();
+    }, 1000 );
+    
+    
+}
+
+function simulateApiToAccountSectionP2(){
+
+    mainLoadingBar.classList.remove('active');
+    mainClassWrapper.classList.remove('main__loading');
 
     // Verification Error
 
@@ -850,28 +877,14 @@ function toAccountSectionP2(){
         createPasswordSpan.classList.add('display__none');
 
     }
-
-   // Swipe to the Phase 2 Section
-    mainLoadingBar.classList.add('active');
-    mainClassWrapper.classList.add('main__loading');
-
-    setTimeout( () => {
-        simulateApiToAccountSectionP2();
-    }, 1000 );
-    
-    
-}
-
-function simulateApiToAccountSectionP2(){
-
-    mainLoadingBar.classList.remove('active');
-    mainClassWrapper.classList.remove('main__loading');
     
     createFormP1.classList.remove('actualView');
     createFormP1.classList.add('left');
     createSectionSecondTitle.classList.remove('display__none');
     console.log(newUser.email);
     mainTitle.innerHTML = "Bienvenido a Google";
+    mediaLaptopForCreateAccountImg.src = 'https://ssl.gstatic.com/accounts/signup/glif/personal.svg';
+    mediaLaptopForCreateAccountText.innerHTML = 'Tu información personal es privada y está protegida';
     //    secondTitle.classList.remove('active');
     createAccountSectionEmailUser.innerHTML = newUser.email;
     
@@ -912,6 +925,8 @@ function simulateApiBackToAccountSectionP1(){
     createFormP1.classList.remove('left');
     createSectionSecondTitle.classList.add('display__none');
     mainTitle.innerHTML = "Crear tu cuenta de Google";
+    mediaLaptopForCreateAccountImg.src = 'https://ssl.gstatic.com/accounts/signup/glif/account.svg';
+    mediaLaptopForCreateAccountText.innerHTML = 'Una cuenta. Todos los servicios de Google a tu disposición.';
 
     resetPhase2Errors();
 
@@ -1092,6 +1107,9 @@ function simulateApiToEmailSectionFromP2(){
     createFormP2.classList.remove('actualView');
     createSectionSecondTitle.classList.add('display__none');
     mainTitle.innerHTML = `Acceder`;
+    mediaLaptopForCreateAccountImg.src = 'https://ssl.gstatic.com/accounts/signup/glif/account.svg';
+    mediaLaptopForCreateAccountText.innerHTML = 'Una cuenta. Todos los servicios de Google a tu disposición.';
+    mainRegisterGoogle.classList.add('inCreateAccount');
     // secondTitle.classList.remove('display__none');
     emailInput.focus()
 

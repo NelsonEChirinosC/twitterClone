@@ -1,14 +1,18 @@
-.buttons__container__access{
+.buttons__container__access, 
+.buttons__container__create{
     flex-direction: column;
     align-items: center;
+    transition: none;
 }
 
-.button__accessAccount{
+.button__accessAccount,
+.button__toEmailSection{
     order: 10;
     margin-bottom: 28px;
 }
 
-.button__access__next{
+.button__access__next,
+.button__create__next{
     order: 1;
     margin-bottom: 28px;
 }
