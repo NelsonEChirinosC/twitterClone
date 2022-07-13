@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles  -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/registerApple/registerApple.css">
+    <link rel="stylesheet" href="../css/registerApple/registerApple-media-min770.css" media="(min-width:770px)">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,900;1,500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/cb5f356e9e.js" crossorigin="anonymous"></script>
+
+    <!-- Title -->
+    <link rel="icon" type="image/x-icon" href="https://cdn.icon-icons.com/icons2/836/PNG/128/Twitter_icon-icons.com_66803.png">
+    
+    <title>Inicia sesión con apple ID - Google Chrome</title>
+</head>
+<body>
+    
+    <div class="wrapperOn"></div>
+
+    <header class="principal__header">
+        <div class="principal__header__appleLink">
+            <a href="https://www.apple.com/mx/"><i class="fa-brands fa-apple"></i></a>
+        </div>
+        <div class="principal__header__appleID">
+            <div class="header__appleID__dropbox">
+                <h3 class="header__appleID__title">
+                    Apple ID
+                </h3>
+
+                <button class="header__appleID__showSesionButton">
+                    <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <span class="header__appleID__mediaInfo">
+                    Iniciar sesión
+                </span>
+            </div>
+
+            <span class="header__appleID__info">
+                Iniciar sesión
+            </span>
+        </div>
+
+    </header>
+
+    <main>
+        <section class="main">
+            <section class="main__header">
+                <img class="main__header__img" src="../../img/TwitterLogoNoBackground2.png" alt="twitter image">
+                <h3 class="main__header__title"> Usa tu Apple ID para iniciar sesión en Twitter. </h3>
+            </section>
+            <section class="main__input">
+                <form class="main__input__form" action="">
+
+                    <label class="main__input__labelWrapper firstInput" for="appleIdInput">
+
+                        <div class="insiderInput">
+                            <span class="input__title">Apple ID</span>
+                            <button type="button" disabled class="input__next"> 
+                                <span class="input__next__circle"> 
+                                    <i class="fa-solid fa-arrow-right">
+                                    </i> 
+                                </span> 
+                            </button>
+                        </div>
+
+                        <input class="main__input__appleInput" id="appleIdInput" type="text">
+                    </label>
+
+                    <label class="main__input__labelWrapper secondInput" for="applePasswordInput">
+
+                        <div class="insiderInput">
+                            <span class="input__title">Contraseña</span>
+                            <button type="button" disabled class="input__next"> 
+                                <span class="input__next__circle"> 
+                                    <i class="fa-solid fa-arrow-right">
+                                    </i> 
+                                </span> 
+                            </button>
+                        </div>
+
+                        <input class="main__input__appleInput" id="applePasswordInput" type="text">
+                    </label>
+
+
+
+
+                </form>
+                <span class="main__input__forgetPassword">
+                    <a href="#"> ¿Olvidaste tu Apple ID o la contraseña? <i class="fa-solid fa-arrow-down"></i> </a>
+                </span>
+            </section>
+            <section class="main__info">
+                <img src="https://appleid.cdn-apple.com/appleauth/static/bin/cb1900903086/dist/assets/privacy-icon.png" alt="privacy-icon">
+                <p>
+                    Al configurar el inicio de sesión con Apple, se puede utilizar la información de tus interacciones con Apple y este dispositivo para ayudar a evitar fraudes.<a href="https://www.apple.com/mx/privacy/"> Consulta cómo se administran tus datos... </a>
+                </p>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__copywrite">Copyright © 2022 Apple Inc. Todos los derechos reservados.
+            </p>
+            <p class="footer__privacity"> <a href="https://www.apple.com/mx/legal/privacy/"> Política de privacidad </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/DOM.js"></script>
+    <script src="../js/registerApple/registerApple.js"></script>
+</body>
+</html>

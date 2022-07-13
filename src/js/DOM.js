@@ -9,7 +9,39 @@ const body = document.querySelector('body');
 */
 
 const googleButtonIndex = document.querySelector('.button__google');
- 
+const appleButtonIndex = document.querySelector('.button__apple');
+
+/*
+REGISTER APPLE VARIABLES
+*/
+
+// Divs
+const principalHeaderAppleIDDiv = document.querySelector('.principal__header__appleID');
+const wrapperOnDiv = document.querySelector('.wrapperOn');
+const firstInput = document.querySelector('.firstInput > .insiderInput');
+const secondInput = document.querySelector('.secondInput > .insiderInput');
+
+//Span
+const headerAppleIDInfo = document.querySelector('.header__appleID__info');
+
+
+// Label
+const mainInputLabelWrapper = document.querySelector('.firstInput');
+const mainInputLabelWrapper2 = document.querySelector('.secondInput');
+
+//Forms
+const mainInputForm = document.querySelector('.main__input__form');
+
+
+//Inputs
+const appleInputsAll = Array.from(document.querySelectorAll('.main__input__appleInput'));
+const appleIdInput = document.querySelector('#appleIdInput');
+const applePasswordInput = document.querySelector('#applePasswordInput');
+
+// Buttons
+const headerAppleIDShowSesionButton = document.querySelector('.header__appleID__showSesionButton');
+const [buttonNextId, buttonNextPassword] = document.querySelectorAll('.input__next');
+
 
 /*
     REGISTER GOOGLE VARIABLES
