@@ -40,7 +40,7 @@ main.inCreateAccount .mediaLaptop__forCreateAccount__text{
     color: #202124;
 }
 
-.footer{
+.footer.createAccount{
     width: 768px;
     max-width: 768px;
 }

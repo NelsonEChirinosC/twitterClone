@@ -34,7 +34,7 @@ function resetConfig(e){
 
     if(createRecuperationEmailPlaceholder.classList.contains('filledContent')){
         if(createRecuperationEmailInput.value.trim() != ''){
-            verificationOtherEmailError(createInputRecuperationSpan, errorCreateRecuperationModal, createRecuperationEmailInput);
+            verificationOtherEmailError({ span: createInputRecuperationSpan, modal:  errorCreateRecuperationModal, input: createRecuperationEmailInput});
         }
     }
 
@@ -74,7 +74,7 @@ function verificationCreateEmailInput({foundError}){
 
     if(!foundError){
         if(createEmailValue == ''){
-            activeError(spanSpecialInputEmail, errorCreateEmailModal, createInputSpecial);
+            activeError({span: spanSpecialInputEmail, modal: errorCreateEmailModal, input: createInputSpecial});
             errorCreateEmailModal.innerHTML = errorCreateEmailMsg.empty;
 
             foundError = true;
@@ -86,23 +86,24 @@ function verificationCreateEmailInput({foundError}){
     if(buttonActualEmail.dataset.gmail == 'true'){
         // Con @gmail.com
         
-        const regexInvalidCharacter = /[^a-z0-9]/gi;
-        const isInvalid = regexInvalidCharacter.test(createEmailValue); 
-
-
+        
+        
         // Length Error
         if(createEmailValue.length < 6 || createEmailValue.length > 30 ){
-            activeError(spanSpecialInputEmail, errorCreateEmailModal, createInputSpecial);
+            activeError({span: spanSpecialInputEmail, modal: errorCreateEmailModal, input: createInputSpecial});
             errorCreateEmailModal.innerHTML = errorCreateEmailMsg.longFail;
-
+            
             foundError = true
-
+            
             return foundError
         }
-
+        
         // Character Error
+        const regexInvalidCharacter = /[^a-z0-9]/gi;
+        const isInvalid = regexInvalidCharacter.test(createEmailValue); 
+        
         if(isInvalid){
-            activeError(spanSpecialInputEmail, errorCreateEmailModal, createInputSpecial);
+            activeError({span: spanSpecialInputEmail, modal: errorCreateEmailModal, input: createInputSpecial});
             errorCreateEmailModal.innerHTML = errorCreateEmailMsg.invalidCharacter;
             
             foundError = true
@@ -118,7 +119,7 @@ function verificationCreateEmailInput({foundError}){
         
         // Sin @gmail
         
-        verificationOtherEmailError( spanSpecialInputEmail, errorCreateEmailModal, createEmailInput);
+        verificationOtherEmailError( {span: spanSpecialInputEmail, modal: errorCreateEmailModal, input: createEmailInput, inputError: createInputSpecial});
 
         if(foundError) {return foundError}
 
@@ -131,7 +132,7 @@ function verificationCreateEmailInput({foundError}){
     const isEmailInDataBase = isEmailInDataBaseFunc(emailUser)
 
     if(isEmailInDataBase){
-        activeError(spanSpecialInputEmail, errorCreateEmailModal, createInputSpecial);
+        activeError({span: spanSpecialInputEmail, modal: errorCreateEmailModal, input: createInputSpecial});
         errorCreateEmailModal.innerHTML = errorCreateEmailMsg.alredyExits;
 
         foundError = true
@@ -224,87 +225,6 @@ function verificationCreateEmailInput({foundError}){
 
 }
 
-function verificationOtherEmailError(span, modal, input, optional = false){
-
-    if(optional && createRecuperationEmailInput.value == ''){
-        return
-    }
-
-    const errorCreateEmailMsg = errorMessageGoogle.registerGoogle.createUserGoogle.emailAndPassword.email;
-    const email = input.value;
-
-    //// @ Error
-    const regexSymbol = /@/g;
-    const notSymbolOrVarius = email.match(regexSymbol);
-
-    // not found @
-    if(notSymbolOrVarius == null){
-        activeError(span, modal, input);
-        modal.innerHTML = errorCreateEmailMsg.notSymbol;
-        
-        return true
-    }
-
-    // Varius @
-    if(notSymbolOrVarius.length > 1){
-        activeError(span, modal, input);
-        modal.innerHTML = errorCreateEmailMsg.notOneSymbol;
-
-        return true
-    }
-
-    //// not User
-    const regexUser = /.@/gi;
-    const foundUser = regexUser.test(email);
-
-    if(!foundUser){
-        activeError(span, modal, input);
-        modal.innerHTML = errorCreateEmailMsg.notNameUser;
-
-        return true
-    }
-    
-    //// not dominion
-    const regexDominion = /\.com$/i;
-    const foundDominion = regexDominion.test(email);
-    
-    if(!foundDominion){
-        activeError(span, modal, input);
-        modal.innerHTML = errorCreateEmailMsg.notDominion;
-        
-        return true
-    }
-    
-    return false
-    
-}
-
-function verifationPhoneNumberError(){
-
-    const errorCreatePhone = errorMessageGoogle.registerGoogle.createUserGoogle.phoneAndDate.phone;
-
-    if(createPhoneInput.value.length < 5 && createPhoneInput.value != ''){
-
-        errorCreatePhoneModal.classList.add('active');
-        createPhoneInput.classList.add('error')
-
-        errorCreatePhoneModal.innerHTML = errorCreatePhone.invalidNumber;
-
-        return true
-    }
-
-    return false
-}
-
-function activeError(span, modal, input){
-
-    span.classList.add('display__none');
-    modal.classList.add('active');
-    input.classList.add('error');
-}
-
-
-
 /*
 Inputs Functionality click event
 */
@@ -313,75 +233,6 @@ inputsAll.forEach((input)=> {
     input.addEventListener('change', toogleFilledContent);
     input.addEventListener('keyup', toogleFilledContent);
 })
-
-function toogleFilledContent (e){
-
-    e.stopPropagation();
-
-    const elem = e.currentTarget
-    console.log(e.currentTarget.id)
-
-    switch(elem.id){
-
-        case 'email-input':
-            condition(emailInput.value.trim(),accessEmailPlaceholder);
-            break;
-
-        case 'password__input' :
-            condition(passwordInput.value.trim(), accessPasswordPlaceholder);
-            break;
-
-        case 'create__name__input':
-            condition(createNameInput.value.trim(), createNamePlaceholder);
-            break;
-
-        case 'create__lastName__input':
-            condition(createLastNameInput.value.trim(), createLastNamePlaceholder);
-            break;
-
-        case 'create__email__input':
-            condition(createEmailInput.value.trim(), createEmailPlaceholder);
-            break;
-
-        case 'create__password__input':
-            condition(createPasswordInput.value.trim(), createPasswordPlaceholder);
-            break;
-
-        case 'create__confirm__input':
-            condition(createConfirmInput.value.trim(), createConfirmPlaceholder);
-            break;
-
-        case 'create__phone__input':
-            condition(createPhoneInput.value.trim(), createPhonePlaceholder);
-            break;
-
-        case 'create__recuperationEmail__input':
-            condition(createRecuperationEmailInput.value.trim(), createRecuperationEmailPlaceholder);
-            break;
-
-        case 'create__dayBirth__input':
-            condition(createDayBirthInput.value.trim(), createDayOfBirthPlaceholder);
-            break;
-
-        case 'create__yearBirth__input':
-            condition(createYearBirthInput.value.trim(), createYearOfBirthPlaceholder);
-            break;
-
-        case 'create__nameGenre__input':
-            condition(createNameGenreInput.value.trim(), createNameGenrePlaceholder);
-            break;
-
-    }
-
-    function condition (elementValue, placeHolder){
-        if(elementValue === ''){
-            placeHolder.classList.remove('filledContent');
-        } else {
-            placeHolder.classList.add('filledContent')
-        }
-    }
-
-}
 
 /*
 
@@ -619,16 +470,6 @@ function createShowPassword(){
 
 }
 
-function animateCheckBox(isChecked, checkbox){
-
-    if(isChecked){
-        checkbox.style.backgroundColor = '#1a73e8';
-    } else {
-        checkbox.style.backgroundColor = '#fff';
-    }
-
-}
-
 /*
     Create Account Section
 */ 
@@ -714,6 +555,7 @@ function simulateApiToAccountSectionP1(){
     mainTitle.innerHTML = `Crear tu cuenta de Google`;
     secondTitle.classList.remove('active');
     mainRegisterGoogle.classList.add('inCreateAccount');
+    createAccountFooterGoogle.classList.add('createAccount');
 
 }
 
@@ -741,6 +583,7 @@ function simulateApiToEmailSectionFromP1(){
     createFormP1.classList.add('display__none');
     mainTitle.innerHTML = `Acceder`;
     mainRegisterGoogle.classList.remove('inCreateAccount');
+    createAccountFooterGoogle.classList.remove('createAccount');
     // secondTitle.classList.remove('display__none');
     emailInput.focus()
 
@@ -1035,8 +878,8 @@ function createAccount(){
     let arrayErrors = [];
     const errorMsgPhoneDate = errorMessageGoogle.registerGoogle.createUserGoogle.phoneAndDate;
 
-    arrayErrors.push(verifationPhoneNumberError());
-    arrayErrors.push(verificationOtherEmailError(createInputRecuperationSpan, errorCreateRecuperationModal, createRecuperationEmailInput, true));
+    arrayErrors.push(verifationPhoneNumberError({section: 'registerGoogle', input: createPhoneInput, modal: errorCreatePhoneModal }));
+    arrayErrors.push(verificationOtherEmailError({span: createInputRecuperationSpan, modal:  errorCreateRecuperationModal, input: createRecuperationEmailInput, optional: true}));
     arrayErrors.push(verificationDateOfBirthError(errorMsgPhoneDate));
     arrayErrors.push(verificationGenreError(errorMsgPhoneDate));
 
@@ -1100,6 +943,7 @@ function simulateApiToEmailSectionFromP2(){
     mediaLaptopForCreateAccountImg.src = 'https://ssl.gstatic.com/accounts/signup/glif/account.svg';
     mediaLaptopForCreateAccountText.innerHTML = 'Una cuenta. Todos los servicios de Google a tu disposición.';
     mainRegisterGoogle.classList.add('inCreateAccount');
+    createAccountFooterGoogle.classList.remove('createAccount');
     // secondTitle.classList.remove('display__none');
     emailInput.focus()
 
@@ -1239,7 +1083,6 @@ createReferAsInput.addEventListener('click', (e) => {deleteOption(e)});
 function deleteOption(e){
     const select = e.currentTarget;
 
-    console.log(createOptionsSelect)
 
     if(select.id == 'create__months__select'){
         createOptionsSelect[0].classList.add('display__none');

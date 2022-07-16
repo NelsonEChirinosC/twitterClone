@@ -1,0 +1,551 @@
+:root{
+    --focus-input-color: rgb(29,155,240);
+}
+
+html{
+    min-height: 100% !important;
+    height: 100%;
+}
+
+main{
+    width: 100%;
+}
+
+.main{
+    width: 90%;
+    margin: 24px auto;
+}
+
+.header{
+    margin: 20px auto;
+    margin-bottom: 40px;
+}
+
+.header__icon{
+    font-size: 4.5rem;
+    color: var(--brand-color);
+}
+
+.main__titles {
+    /* margin: 20px; */
+    width: 90%;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+h1.titles__title{
+    margin-bottom: 38px;
+    font-size: 3.4rem;
+    font-weight: 800;
+}
+
+h2.titles__title{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.main__buttons{
+    width: 100%;
+    max-width: 288px;
+    margin-bottom: 52px;
+}
+
+.main__button{
+    width: 100%;
+    max-width: 288px;
+    margin-bottom: 10px;
+    padding: 12px 10px;
+    font-size: 1.4rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.twitter__button--white:active{
+    background-color: var(--button-active-white);
+}
+
+.main__buttons .twitter__button--blue{
+    margin-bottom: 6px;
+}
+
+.button__google{
+    font-weight: 600;
+    color: #555;
+}
+
+.button__google:hover{
+    background-color: #f8faff;
+}
+
+.button__google span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.button__google--icon{
+    width: 18px;
+    height: 18px;
+}
+
+.button__apple{
+    font-weight: 700;
+    margin-bottom:0 ;
+}
+
+.button__apple:hover{
+    background-color: rgba(230,230,230);
+}
+
+/* 26,140,216 */
+
+.button__apple span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.main__o{
+    width: 100%;
+    margin: 14px 0;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.main__o span{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+.main__o span::before,
+.main__o span::after{
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #eff3f4;
+}
+
+
+.main__button i{
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+.main__terms{
+    text-align: center;
+    color: #333;
+}
+
+.main__terms a{
+    color: var(--anchor-color);
+}
+
+.main__sesion h3 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+}
+
+.button__sesion{
+    font-weight: 600;
+    color: var(--brand-color);
+}
+
+.button__sesion:hover{
+    background-color: rgba(29,155,240,0.1);
+}
+
+.main__background{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 260px;
+    background: url(../../../img/twitterMainPage.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main__background__icon i {
+    font-size: 22rem;
+    color: white;
+}
+
+.footer{
+    display: block;
+    width: 90%;
+    margin: 12px auto;
+}
+
+.footer__list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
+    grid-auto-rows: 20px;
+    gap: 12px;
+}
+
+.footer__list li {
+    padding: 2px 0;
+}
+
+/* .footer__list li:nth-child(odd){
+    justify-self: end;
+} */
+
+.footer__list a {
+    font-size: 1.2rem;
+    color: var(--gray-twitter);
+}
+
+.footer__list a:active{
+    text-decoration: underline;
+}
+
+.footer__list li:last-child a {
+    cursor: text;
+}
+
+.footer__list li:last-child a:active{
+    text-decoration: none;
+}
+
+/* 
+
+    Modals Section 
+
+*/
+
+/*  Step One */
+
+.wrapperBlack{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.modalPopUp__index{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* padding: 8px; */
+    background-color: #fff;
+    z-index: 5;
+}
+
+.navigator__step{
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:34px;
+    height: 34px;
+    padding: 8px;
+    font-size: 1.5rem;
+    /* border: 1px solid #000; */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navigator__step:hover{
+    background-color: rgba(15,20,25,0.1);
+}
+
+.index__modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    /* border: 4px solid blue; */
+}
+
+.indexModal__header{
+    margin-left: 24px;
+}
+
+.indexModal__header p {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f1419;
+}
+
+.indexModal__mainTitle{
+    margin: 42px 0 26px 0;
+    font-size: 2.6rem;
+}
+
+.indexModal__formWrapper{
+    padding: 16px 42px 0px 42px;
+}
+
+.index__inputLabel{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 56px;
+    margin-top: 28px;
+    border-radius: 4px;
+    border: 1px solid var(--border-input-color);
+    overflow: hidden;
+}
+
+.index__inputLabel.focused{
+    border: 2px solid var(--focus-input-color)
+}
+
+.index__inputLabel.error{
+    border: 1px solid var(--error-input)
+}
+
+.index__inputLabel.focused.error{
+    border: 2px solid var(--error-input);
+}
+
+
+
+.indexNameInput__chaCount{
+    display: inline-flex;
+    justify-content: end;
+    gap: 4px;
+    width: 100%;
+    padding-top: 10px;
+    padding-right: 10px;
+    font-size: 1.3rem;
+    line-height: 1;
+    color: var(--gray-twitter);
+    opacity: 0;
+    /* border: 1px solid black; */
+}
+
+.index__input__placeholder{
+    position: absolute;
+    top: calc(50% - 6px);
+    left: 8px;
+    font-size: 1.6rem;
+    color: var(--gray-twitter);
+    transition: all 0.5s;
+    transition-timing-function: var(--cubic--fast-transition);
+}
+
+
+
+.index__inputLabel.focused .index__input__placeholder,
+.index__inputLabel .index__input__placeholder.filledContent,
+.dateWrapper__inputContainer .index__input__placeholder{
+    transform: translate(-8px,-12px) scale(0.7);
+}
+
+.index__inputLabel.focused .index__emailOrPhone__placeholder.leftTranslate,
+.index__emailOrPhone__placeholder.filledContent.leftTranslate{
+    transform: translate(-18px,-12px) scale(0.7);
+}
+
+.index__inputLabel.focused .indexNameInput__chaCount{
+    opacity: 1;
+}
+
+.index__inputLabel.focused .index__input__placeholder,
+.index__inputLabel.focused .indexSelect__arrow{
+    color: var(--focus-input-color);
+}
+
+.index__inputLabel.focused.error .index__input__placeholder{
+    color: var(--error-input);
+}
+
+
+
+.indexInput{
+    width: 100%;
+    font-size: 1.4rem;
+    /* padding: 4px 0; */
+    padding-left: 8px;
+    line-height: 1.5;
+    border: none;
+}
+
+.indexInput:focus{
+    outline: none;
+}
+
+.space__input{
+    display: block;
+    width: 100%;
+    height: 23px;
+}
+
+.error__inputIndex{
+    display: none;
+    /* display: inline-block; */
+    font-size: 1.3rem;
+    margin-top: 2px;
+    margin-left: 8px;
+    color: var(--error-input);
+
+}
+
+.error__inputIndex.active{
+    display: inline-block;
+}
+
+.typeAnchor__twiiter{
+    display: inline-block;
+    width: 100%;
+    margin: 4px 0;
+    text-align: end;
+    font-size: 1.5rem;
+    color: var(--focus-input-color);
+    cursor: pointer;
+}
+
+.typeAnchor__twiiter:hover{
+    text-decoration: underline;
+}
+
+.indexModal__form__emailOrPhone{
+    margin-top: 18px;
+}
+
+.indexModal__form__dateWrapper{
+    margin: 22px 0;
+}
+
+.dateWrapper__info{
+    font-size: 1.3rem;
+    color: #555;
+}
+
+.dateWrapper__title{
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.dateWrapper__inputContainer{
+    display: grid;
+    grid-template-columns: 3fr 1.5fr 2fr;
+    gap: 10px;
+}
+
+.dateWrapper__inputContainer .index__input__placeholder{
+    z-index: 2;
+}
+
+.indexSelect__date{
+    position: relative;
+    width: 100%;
+    height: calc(100% - 23px);
+    font-size: 1.6rem;
+    border: none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+.indexSelect__date:focus{
+    outline: none;
+}
+
+.indexSelect__arrow{
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 12px;
+    font-size: 1.8rem;
+    color: #555;
+    z-index: 2;
+    /* cursor: pointer; */
+}
+
+.indexModal__button__container{
+    display: grid;
+    place-items: center;
+    padding: 0px 42px;
+    width: 100%;
+    height: 100px;
+}
+
+.indexModal__next{
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    background-color: #0f1419;
+    color: #fff;
+    cursor: pointer;
+}
+
+.indexModal__next:disabled{
+    opacity: 0.5;
+    cursor: default;
+}
+
+/* Step Two */
+.step2__info__title{
+    margin: 40px 0 12px 0;
+    font-size: 2rem;
+}
+
+.step2__info__checkbox{
+    display: grid;
+    grid-template-columns: auto 1.8rem;
+    gap: 20px;
+    margin-bottom: 48px;
+}
+
+.step2__info__checkbox__description{
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.step2__info__terms{
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.step2__info__terms a{
+    color: var(--focus-input-color);
+}
+
+.step2__info__terms a:hover{
+    text-decoration: underline;
+}
+
+.display__none{
+    display: none;
+}
+
+.active{
+    display: block;
+}
+
+/*
+    Remove arrow in phone number
+*/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

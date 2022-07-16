@@ -255,6 +255,11 @@ main{
     outline: none;
 }
 
+#create__email__input.error{
+    border: none;
+    outline: none;
+}
+
 .createEmail__gmailText{
     font-size: 1.4rem;
     margin-right: 12px;
@@ -371,49 +376,6 @@ main{
 
 .create__checkbox{
     margin-top: 10px;
-}
-
-.checkbox__wrapper{
-    display: grid;
-    place-items: center;
-    width: 3.4rem;
-    height: 3.4rem;
-    padding: 6px;
-    border-radius: 50%;
-}
-
-.checkbox__wrapper:hover{
-    box-shadow: 0 0 1px 1px #eaf4ff;
-    background-color:  #f6fafe;
-}
-
-.showPassword__label__checkbox{
-    width: 80%;
-    height: 80%;
-    padding: 2px;
-    border: 2px solid #555;
-    border-radius: 2px;
-    color: #888;
-    cursor: pointer;
-    -webkit-appearance: none;
-    transition: all 0.2s;
-}
-
-.showPassword__label__checkbox:checked{
-    border: none;
-}
-
-.showPassword__label__checkbox:checked::before {
-    /* width: 300px;
-    height: 300px; */
-    content: "\2713";
-    /* text-shadow: 1px 1px 1px rgba(0, 0, 0, .2); */
-    font-size: 15px;
-    font-weight: 700;
-    text-align: center;
-    line-height: 15px;
-    border: none;
-    color: #f3f3f3;
 }
 
 .buttons__container{
@@ -601,6 +563,11 @@ label[for="create__phone__input"]{
 
 .create__phone__span{
     margin-bottom: 24px;
+}
+
+.error__input__phone{
+    margin-left: 86px;
+    margin-bottom: 4px;
 }
 
 #create__recuperationEmail__input:focus + .inputs__form__placeholder,

@@ -7,8 +7,10 @@
 
     <!-- Styles  -->
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/index-laptop-979.css" media="(min-width:980px)">
+    <link rel="stylesheet" href="./css/index/index.css">
+    <link rel="stylesheet" href="./css/index/index-media-maxh585.css" media="(max-height:640px)">
+    <link rel="stylesheet" href="./css/index/index-media-min700.css" media="(min-width:700px)">
+    <link rel="stylesheet" href="./css/index/index-media-min979.css" media="(min-width:980px)">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +25,165 @@
     
     <title>Twitter</title>
 </head>
-<body>
+<!-- 
+    this class is for not scrolling the body with a modal present: overFlowHidden 
+-->
+<body
+    class="overFlowHidden"
+>
+
+    <div class="wrapperBlack">
+    </div>
+
+    <section class="modalPopUp__index">
+        <section class="index__modal modal__step1 display__none">
+            <div class="navigator__step modalPopUp__closeModal">
+                <i class="fa-solid fa-x"></i>
+            </div>
+            
+            <div class="indexModal__formWrapper">
+                <div class="indexModal__header"> 
+                    <p> Paso 1 de 5 </p>  
+                </div>
+    
+                
+                <form class="indexModal__form">
+                    <h2 class="indexModal__mainTitle">
+                        Crea tu cuenta
+                    </h2>
+
+                    <label for="indexNameInput" class="index__inputLabel indexModal__nameInput">
+                        <span class="indexNameInput__chaCount">
+                            <span class="chaCount">0</span> / 50
+                        </span>
+                        <span class="index__input__placeholder index__inputName__placeholder">
+                            Nombre
+                        </span>
+                        <input type="text" class="indexInput" id="indexNameInput" maxlength="50">
+                    </label>
+                    <span class="error__inputIndex"></span>
+
+                    <label for="indexEmailOrPhoneInput" class="index__inputLabel indexModal__emailOrPhoneInput">
+                        <span class="space__input"></span>
+                        <span class="index__input__placeholder index__emailOrPhone__placeholder">
+                            Teléfono
+                        </span>
+                        <input type="number" class="indexInput" id="indexEmailOrPhoneInput">
+                    </label>
+                    <span class="error__inputIndex"></span>
+
+                    <span class="typeAnchor__twiiter indexModal__form__emailOrPhone" data-type="phone">
+                        Usar correo
+                    </span>
+
+                    <div class="indexModal__form__dateWrapper">
+                        <h3 class="dateWrapper__title"> 
+                            Fecha de nacimiento 
+                        </h3>
+                        <p class="dateWrapper__info">
+                            Esta información no será pública. Confirma tu propia edad, incluso si esta cuenta es para una empresa, una mascota u otra cosa. 
+                        </p>
+                        <div class="dateWrapper__inputContainer">
+
+                            <label for="" class="index__inputLabel indexSelect__month__label">
+                                <span class="indexSelect__arrow">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                                <span class="space__input"></span>
+                                <span class="index__input__placeholder">
+                                    Mes
+                                </span>
+                                <select class="indexInput indexSelect__date" name="" id="indexSelectMonth">
+                                    <option value="default"></option>
+                                    <option value="january">Enero</option>
+                                    <option value="february">Febrero</option>
+                                    <option value="march">Marzo</option>
+                                    <option value="april">Abril</option>
+                                    <option value="may">Mayo</option>
+                                    <option value="june">Junio</option>
+                                    <option value="july">Julio</option>
+                                    <option value="august">Agosto</option>
+                                    <option value="september">Septiembre</option>
+                                    <option value="october">Octubre</option>
+                                    <option value="november">Noviembre</option>
+                                    <option value="december">Diciembre</option>
+                                </select>
+                            </label>
+                            <label for="" class="index__inputLabel indexSelect__day__label">
+                                <span class="indexSelect__arrow">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                                <span class="space__input"></span>
+                                <span class="index__input__placeholder">
+                                    Día
+                                </span>
+                                <select class="indexInput indexSelect__date" name="" id="indexSelectDay">
+                                    
+                                </select>
+                            </label>
+                            <label for="" class="index__inputLabel indexSelect__year__label">
+                                <span class="indexSelect__arrow">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                                <span class="space__input"></span>
+                                <span class="index__input__placeholder">
+                                    Año
+                                </span>
+                                <select class="indexInput indexSelect__date" name="" id="indexSelectYear">
+                                    
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="indexModal__button__container">
+                <button disabled class="indexModal__next button__nextStep1"> Siguiente</button>
+            </div>
+
+        </section>
+
+        <section class="index__modal modal__step2">
+
+            <div class="navigator__step go__step1">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            
+            <div class="indexModal__formWrapper">
+                <div class="indexModal__header"> 
+                    <p> Paso 2 de 5 </p>  
+                </div>
+    
+                <h2 class="indexModal__mainTitle">
+                    Personaliza tu experiencia
+                </h2>
+                
+                <div class="step2__register__info">
+                    <h3 class="step2__info__title"> Registrar dónde ves contenido de Twitter en la web </h3>
+                    <div class="step2__info__checkbox">
+                        <p class="step2__info__checkbox__description"> Twitter utiliza estos datos para personalizar tu experiencia. Este historial de navegación web nunca se almacenará con tu nombre, correo electrónico ni número de teléfono. </p>
+                        <div class="checkbox__wrapper">
+                            <input 
+                            type="checkbox"
+                            class="generalOne__checkbox"
+                            name="" id="index__step2__checkbox"> 
+                        </div>
+                    </div>
+
+                    <p class="step2__info__terms">
+                        Al registrarte, aceptas nuestros <a href="#">Términos, Política de privacidad y Política de uso de cookies</a>. Twitter podrá usar tu información de contacto, como tu dirección de correo electrónico y número de teléfono, con los fines descritos en nuestra Política de privacidad. <a href="#">Más información</a>
+                    </p>
+                </div>
+                
+            </div>
+            <div class="indexModal__button__container">
+                <button class="indexModal__next button__nextStep2"> Siguiente</button>
+            </div>
+
+        </section>
+    </section>
+
     <main>
         <section class="main">
             <div class="header">
@@ -50,7 +210,7 @@
                 </button>
                 <div class="main__o"> <span>o</span> </div>
 
-                <button class="main__button twitter__button--blue text--overflow"> Registraste con el numero de telefono o...
+                <button class="main__button twitter__button--blue text--overflow button__createTwitter"> Registraste con el numero de telefono o...
                 </button>
                 <p class="main__terms"> Al registrarte, aceptas los <a href="#">Términos de servicio</a> y la <a href="#">Política de privacidad</a>, incluida la política de <a href="#">Uso de Cookies</a>.</p>
             </div>
@@ -89,7 +249,11 @@
         </ul>
     </footer>
 
+    <script src="./js/dataBaseGeneral.js" ></script>
+    <script src="./js/dataBaseGoogle.js" ></script>
+    <script src="./js/dataBasetwitter.js" ></script>
     <script src="./js/DOM.js"></script>
+    <script src="./js/base.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>

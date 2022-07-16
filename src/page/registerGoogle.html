@@ -35,21 +35,6 @@
             <div class="main__loading__bar--blue"></div>
         </div>
 
-        <!-- 
-            
-            
-            CHANGE THIS WHEN WORKING WITH A PHASE:
-
-             Working with Phase 2, change to Original:
-                remove createAccountSection to main__titles
-                remove display__none to main__titles__secundaryTitle
-                remove display__none to main__inputs__form
-                add display__none to main__create__formP2
-                remove actualView to main__create__formP2
-                add active to main__titles__secundaryTitle
-                 
-        -->
-
         <div class="main">
             <section class="main__titles">
 
@@ -122,7 +107,7 @@
                             <div class="checkbox__wrapper">
                                 <input 
                                 type="checkbox"
-                                class="showPassword__label__checkbox"
+                                class="generalOne__checkbox showPassword__label__checkbox"
                                 name="showPassword__input" id="showPassword__checkbox"> 
                             </div>
 
@@ -283,7 +268,7 @@
                         </label>
 
                     </div>
-                    <span class="error__input" > 
+                    <span class="error__input error__input__phone" > 
                     </span>
                     <span class="create__phone__span create__input__description"> 
                         Google utilizará este número únicamente como medida de seguridad de tu cuenta. Nadie podrá verlo. Luego podrás elegir si deseas usarlo para otros fines.
@@ -412,7 +397,7 @@
             </figure>
         </div>
     </main>
-    <footer class="footer">
+    <footer class="footer footer__google">
         <label class="footer__language" for="language-list">
             <select name="language-list" id="language-list">
                 <option value="deutsch"> Deutsch </option>
@@ -439,6 +424,8 @@
     <script src="../js/DOM.js"></script>
     <script src="../js/dataBaseGeneral.js"></script>
     <script src="../js/dataBaseGoogle.js"></script>
+    <script src="../js/dataBasetwitter.js"></script>
+    <script src="../js/base.js"></script>
     <script src="../js/registerGoogle/registerGoogle.js"></script>
 </body>
 </html>

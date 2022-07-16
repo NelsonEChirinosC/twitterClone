@@ -1,0 +1,15 @@
+.indexModal__formWrapper{
+    margin-bottom: 100px;
+    overflow-y: scroll;
+}
+
+.index__modal{
+    position: relative;
+}
+
+.indexModal__button__container{
+    position: absolute;
+    bottom: 0;
+    box-shadow: rgb(101 119 134 / 20%) 0px 0px 7px, rgb(101 119 134 / 15%) 0px 1px 3px 1px;
+    z-index: 6;
+}

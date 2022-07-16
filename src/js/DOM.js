@@ -8,11 +8,70 @@ const body = document.querySelector('body');
     INDEX VARIABLES    
 */
 
+// Black Wrapper 
+const wrapperBlack = document.querySelector('.wrapperBlack');
+
+
+// Labels 
+const indexInputLabelAll = Array.from(document.querySelectorAll('.index__inputLabel'));
+const indexModalNameInputLabel = document.querySelector('.indexModal__nameInput');
+const indexModalEmailOrPhoneInputLabel = document.querySelector('.indexModal__emailOrPhoneInput');
+
+
+// Sections Modals
+const indexModalStepOneSection = document.querySelector('.modal__step1');
+const indexModalStepTwoSection = document.querySelector('.modal__step2');
+
+
+//Spans
+const indexChaCountSpan = document.querySelector('.chaCount');
+const indexChangePhoneOrEmailSpan = document.querySelector('.indexModal__form__emailOrPhone');
+const indexSelectArrow = document.querySelector('.indexSelect__arrow');
+
+
+
+//Modals
+const modalPopUpIndex = document.querySelector('.modalPopUp__index');
+const modalPopUpCloseModal = document.querySelector('.modalPopUp__closeModal');
+const modalGoStepOne = document.querySelector('.go__step1');
+
+
+// Error Span
+const [error__NameInputIndex, error__EoPInputIndex] = document.querySelectorAll('.error__inputIndex');
+
+//Placeholder
+const indexInputNamePlaceholder = document.querySelector('.index__inputName__placeholder');
+const indexEmailOrPhonePlaceholder = document.querySelector('.index__emailOrPhone__placeholder');
+
+
+// Inputs
+const indexInputAll = Array.from(document.querySelectorAll('.indexInput'));
+const indexInputAllStep1 = Array.from(document.querySelectorAll('.modal__step1 .indexInput'));
+const createTwitterNameInput = document.querySelector('#indexNameInput');
+const createTwitterEmailOrPhoneInput = document.querySelector('#indexEmailOrPhoneInput');
+
+
+
+//Selects
+const indexSelectsAll = Array.from(document.querySelectorAll('.indexModal__form__dateWrapper .indexSelect__date'));
+const indexSelectDay = document.querySelector('#indexSelectDay');
+const indexSelectMonth = document.querySelector('#indexSelectMonth');
+const indexSelectYear = document.querySelector('#indexSelectYear');
+
+// Buttons
+
+// Navigations Buttons
 const googleButtonIndex = document.querySelector('.button__google');
 const appleButtonIndex = document.querySelector('.button__apple');
+const buttonCreateTwitterIndex = document.querySelector('.button__createTwitter');
+const indexNextStep1Button = document.querySelector('.button__nextStep1');
+
+// Checkbox
+const indexStepTwoCheckbox = document.querySelector('#index__step2__checkbox');
+
 
 /*
-REGISTER APPLE VARIABLES
+    REGISTER APPLE VARIABLES
 */
 
 // Divs
@@ -181,6 +240,9 @@ const countryPhoneListLi = document.querySelectorAll('.country__phone__list li')
 
 // Options
 const createOptionsSelect = Array.from(document.querySelectorAll('.option__toDelete'));
+
+//Footer
+const createAccountFooterGoogle = document.querySelector('.footer__google');
 
 
 

@@ -40,7 +40,7 @@
     background-color: #fff;
     overflow: hidden;
     transition: all 1s;
-    transition-timing-function: cubic-bezier(.02,.98,.38,1);
+    transition-timing-function: var(--cubic--fast-transition);
 }
 
 .principal__header__appleID.show {

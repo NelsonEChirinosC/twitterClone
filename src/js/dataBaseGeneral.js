@@ -1,6 +1,6 @@
 const actualDate = new Date();
 const actualYear = actualDate.getFullYear();
-const isLeapYear = false;
+let isLeapYear = false;
 
 if(actualYear % 4 == 0 && actualYear % 100 != 0 && actualYear % 400 == 0){
     isLeapYear = true;
