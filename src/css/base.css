@@ -36,6 +36,14 @@ a{
     text-decoration: none;
 }
 
+a.twitter__anchor--blue{
+    color: var(--focus-input-color);
+}
+
+a.twitter__anchor--blue:hover{
+    text-decoration: underline;
+}
+
 ul {
     list-style: none;
 }

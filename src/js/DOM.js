@@ -14,34 +14,52 @@ const wrapperBlack = document.querySelector('.wrapperBlack');
 
 // Labels 
 const indexInputLabelAll = Array.from(document.querySelectorAll('.index__inputLabel'));
+const indexInputLabelStep3All = Array.from(document.querySelectorAll('.index__inputLabel__step3'));
 const indexModalNameInputLabel = document.querySelector('.indexModal__nameInput');
 const indexModalEmailOrPhoneInputLabel = document.querySelector('.indexModal__emailOrPhoneInput');
+const indexSelectMonthLabel = document.querySelector('.indexSelect__month__label');
+const indexModalCodeInputLabel = document.querySelector('.indexModal__codeInput');
+const indexModalPasswordInputLabel = document.querySelector('.indexModal__PasswordInput');
+
+
 
 
 // Sections Modals
 const indexModalStepOneSection = document.querySelector('.modal__step1');
 const indexModalStepTwoSection = document.querySelector('.modal__step2');
+const indexModalStepThreeSection = document.querySelector('.modal__step3');
+const indexModalStepFourSection = document.querySelector('.modal__step4');
+const indexModalStepFiveSection = document.querySelector('.modal__step5');
+const indexModalLoginUserSection = document.querySelector('.modal__loginUser');
+
 
 
 //Spans
 const indexChaCountSpan = document.querySelector('.chaCount');
 const indexChangePhoneOrEmailSpan = document.querySelector('.indexModal__form__emailOrPhone');
 const indexSelectArrow = document.querySelector('.indexSelect__arrow');
+const indexEyePasswordStep5 = document.querySelector('.labelStep5__showPassword');
 
 
 
-//Modals
+//Modals Navigations (Close modal, Back modals)
 const modalPopUpIndex = document.querySelector('.modalPopUp__index');
-const modalPopUpCloseModal = document.querySelector('.modalPopUp__closeModal');
-const modalGoStepOne = document.querySelector('.go__step1');
+const modalPopUpCloseModalAll = Array.from(document.querySelectorAll('.modalPopUp__closeModal'));
+console.log(modalPopUpCloseModalAll)
+const modalBackStepOne = document.querySelector('.go__step1');
+const modalBackStepTwo = document.querySelector('.go__step2');
+const modalBackStepThree = document.querySelector('.go__step3');
+const modalBackStepFour = document.querySelector('.go__step4');
 
 
 // Error Span
-const [error__NameInputIndex, error__EoPInputIndex] = document.querySelectorAll('.error__inputIndex');
+const [error__NameInputIndex, error__EoPInputIndex, error__PasswordInputIndex] = document.querySelectorAll('.error__inputIndex');
 
 //Placeholder
 const indexInputNamePlaceholder = document.querySelector('.index__inputName__placeholder');
 const indexEmailOrPhonePlaceholder = document.querySelector('.index__emailOrPhone__placeholder');
+const indexEmailOrPhonePlaceholderStep3 = document.querySelector('.index__emailOrPhone__placeholderStep3');
+const indexPasswordPlaceholderStep5 = document.querySelector('.index__password__placeholder');
 
 
 // Inputs
@@ -49,6 +67,11 @@ const indexInputAll = Array.from(document.querySelectorAll('.indexInput'));
 const indexInputAllStep1 = Array.from(document.querySelectorAll('.modal__step1 .indexInput'));
 const createTwitterNameInput = document.querySelector('#indexNameInput');
 const createTwitterEmailOrPhoneInput = document.querySelector('#indexEmailOrPhoneInput');
+const createTwitterNameInputStep3 = document.querySelector('#indexNameInputStep3');
+const createTwitterEmailOrPhoneInputStep3 = document.querySelector('#indexEmailOrPhoneInputStep3');
+const createTwitterDateInputStep3 = document.querySelector('#indexDateOfBirthStep3');
+const createTwitterCodeInputStep4 = document.querySelector('#indexCodeInputStep4');
+const createTwitterPasswordInputStep5 = document.querySelector('#indexPasswordInputStep5');
 
 
 
@@ -61,13 +84,23 @@ const indexSelectYear = document.querySelector('#indexSelectYear');
 // Buttons
 
 // Navigations Buttons
-const googleButtonIndex = document.querySelector('.button__google');
-const appleButtonIndex = document.querySelector('.button__apple');
+const googleButtonIndexAll = Array.from(document.querySelectorAll('.button__google'));
+const appleButtonIndexAll = Array.from(document.querySelectorAll('.button__apple'));
 const buttonCreateTwitterIndex = document.querySelector('.button__createTwitter');
 const indexNextStep1Button = document.querySelector('.button__nextStep1');
+const indexNextStep2Button = document.querySelector('.button__nextStep2');
+const indexNextStep3Button = document.querySelector('.button__nextStep3');
+const indexNextStep4Button = document.querySelector('.button__nextStep4');
+const indexNextStep5Button = document.querySelector('.button__nextStep5');
+
 
 // Checkbox
 const indexStepTwoCheckbox = document.querySelector('#index__step2__checkbox');
+
+// Icon
+const openEyeStep5 = document.querySelector('#openEyeStep5');
+const closeEyeStep5 = document.querySelector('#closeEyeStep5');
+
 
 
 /*

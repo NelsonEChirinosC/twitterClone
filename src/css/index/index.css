@@ -223,7 +223,7 @@ h2.titles__title{
 /*  Step One */
 
 .wrapperBlack{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -234,7 +234,7 @@ h2.titles__title{
 
 .modalPopUp__index{
     display: flex;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -268,6 +268,7 @@ h2.titles__title{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
     height: 100%;
     /* border: 4px solid blue; */
 }
@@ -476,6 +477,8 @@ h2.titles__title{
     padding: 0px 42px;
     width: 100%;
     height: 100px;
+    background-color: #fff;
+    z-index: 5;
 }
 
 .indexModal__next{
@@ -496,6 +499,7 @@ h2.titles__title{
 }
 
 /* Step Two */
+
 .step2__info__title{
     margin: 40px 0 12px 0;
     font-size: 2rem;
@@ -518,12 +522,245 @@ h2.titles__title{
     color: #555;
 }
 
-.step2__info__terms a{
-    color: var(--focus-input-color);
+
+/* Step Three */
+
+.index__inputLabel__step3 .index__input__placeholder.filledContent{
+    transform: translate(-6px,-14px) scale(0.8);
 }
 
-.step2__info__terms a:hover{
-    text-decoration: underline;
+.index__inputLabel__step3 .index__date__placeholderStep3.filledContent{
+    transform: translate(-14px,-14px) scale(0.8);
+}
+
+.index__inputLabel__step3 .indexInput{
+    position: relative;
+    font-size: 1.6rem;
+    top: 5px;
+}
+
+.modal__step3__terms{
+    font-size: 1.3rem;
+    color: #555;
+}
+
+.button__container__step3{
+    height: 228px;
+}
+
+.button__nextStep3{
+    background-color: var(--brand-color);
+    margin-bottom: 12px;
+}
+
+.button__nextStep3:hover{
+    background-color: rgba(26,140,216);
+
+}
+
+/* Step Four */
+
+.index__inputLabel__step4.focused .index__code__placeholder{
+    transform: translate(-24px,-14px) scale(0.7);
+}
+
+.indexModal__form__codeVerification{
+    margin-left: 12px;
+    text-align: start;
+    font-size: 1.2rem;
+}
+
+/* Step Five */
+
+.modal__step5 .indexModal__mainTitle{
+    margin-bottom: 12px;
+}
+
+.modal__step5 .indexModal__secondTitle{
+    font-size: 1.3rem;
+    color: #555;
+}
+
+.index__inputLabel__step5.focused .index__password__placeholder,
+.index__inputLabel__step5 .index__password__placeholder.filledContent{
+    transform: translate(-14px,-14px) scale(0.7);
+}
+
+.inputStep5__wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+#indexPasswordInputStep5{
+    width: 90%;
+    /* border: 1px solid blue; */
+}
+
+.labelStep5__showPassword{
+    display: inline-block;
+    margin: 4px 12px 0 8px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    /* border: 1px solid black; */
+}
+
+.labelStep5__showPassword i.display__none{
+    display: none;
+}
+
+/*
+    Login Section
+
+*/
+
+.modal__loginUser{
+    min-height: 100%;
+    max-height: 100%;
+}
+
+.login__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.login__header{
+    /* position: absolute;
+    top: 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 53px;
+    min-height: 53px;
+    margin: 0;
+}
+
+.space__53h{
+    width: 100%;
+    height: 53px;
+    min-height: 53px;
+    margin-bottom: 4px;
+    border: 1px solid black;
+}
+
+.login__header p {
+    font-size: 2.8rem;
+    color: var(--brand-color);
+}
+
+.login__wrapper__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 364px;
+    max-height: 100%;
+    /* min-height: 533px; */
+    min-height: 600px;
+    /* padding: 0 32px 48px 32px;
+    margin: auto 61.6px; */
+}
+
+.login__title{
+    margin:0;
+    padding: 28px 0;
+    
+}
+
+.login__buttons{
+    margin-bottom: 0;
+}
+
+.login__buttons .main__button{
+    padding: 8px 10px;
+}
+
+.login__buttons .button__google{
+    margin-bottom: 24px;
+    font-weight: 600;
+    color: #222;
+}
+
+.login__buttons .main__o span::before,
+.login__buttons .main__o span::after{
+    background-color: #ddd;
+}
+
+.indexModal__loginInput{
+    margin-top: 0;
+}
+
+.index__loginInput__placeholder{
+    max-width: 270px;
+}
+
+.indexModal__loginInput.focused .index__loginInput__placeholder{
+    max-width: 330px;
+    transform: translate(-32px,-14px) scale(0.8);
+}
+
+.login__wrapper__form .indexModal__button__container{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+    height: auto;
+    margin: 24px 0;
+    padding: 0;
+}
+
+.button__login{
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 1.4rem;
+}
+
+.button__login:hover{
+    opacity: 0.9;
+}
+
+.button__login--white{
+    background-color: #fff;
+    color: #0f1419;
+    border: 1px solid #ddd;
+}
+
+.button__login--white:hover{
+    color: black;
+    background-color: #ddd;
+}
+
+.login__register{
+    align-self: flex-start;
+    margin-top: 34px;
+    font-size: 1.4rem;
+    color: #555;
+}
+
+.login__nelson{
+    transition: all 0.4s;
+}
+
+.login__nelson:hover{
+    color: #fff;
+    background-color: black;
+}
+
+.messageModal__login{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    padding-left: 14px;
+    font-size: 1.5rem;
+    background-color: var(--brand-color);
+    color: #fff;
 }
 
 .display__none{

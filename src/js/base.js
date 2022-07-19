@@ -158,6 +158,10 @@ function toogleFilledContent (e){
             condition(createTwitterEmailOrPhoneInput.value.trim(), indexEmailOrPhonePlaceholder);
             break
 
+        case 'indexPasswordInputStep5':
+            condition(createTwitterPasswordInputStep5.value.trim(), indexPasswordPlaceholderStep5);
+            break
+
         /*
             Register Google Inputs
         */

@@ -40,6 +40,11 @@ const errorMessageTwitter = {
                     `
                         Introduce un número de teléfono válido.
                     `
+        },
+        password:{
+                invalidInput:`
+                        <p> Por favor ingrese una contraseña que tenga 8 caracteres o más. </p>
+                `
         }
     }
 }

@@ -29,7 +29,8 @@
     this class is for not scrolling the body with a modal present: overFlowHidden 
 -->
 <body
-    class="overFlowHidden"
+class="overFlowHidden"
+
 >
 
     <div class="wrapperBlack">
@@ -144,7 +145,7 @@
 
         </section>
 
-        <section class="index__modal modal__step2">
+        <section class="index__modal modal__step2 display__none">
 
             <div class="navigator__step go__step1">
                 <i class="fa-solid fa-arrow-left"></i>
@@ -165,6 +166,7 @@
                         <p class="step2__info__checkbox__description"> Twitter utiliza estos datos para personalizar tu experiencia. Este historial de navegación web nunca se almacenará con tu nombre, correo electrónico ni número de teléfono. </p>
                         <div class="checkbox__wrapper">
                             <input 
+                            checked
                             type="checkbox"
                             class="generalOne__checkbox"
                             name="" id="index__step2__checkbox"> 
@@ -172,13 +174,222 @@
                     </div>
 
                     <p class="step2__info__terms">
-                        Al registrarte, aceptas nuestros <a href="#">Términos, Política de privacidad y Política de uso de cookies</a>. Twitter podrá usar tu información de contacto, como tu dirección de correo electrónico y número de teléfono, con los fines descritos en nuestra Política de privacidad. <a href="#">Más información</a>
+                        Al registrarte, aceptas nuestros <a class="twitter__anchor--blue" href="#">Términos, Política de privacidad y Política de uso de cookies</a>. Twitter podrá usar tu información de contacto, como tu dirección de correo electrónico y número de teléfono, con los fines descritos en nuestra Política de privacidad. <a class="twitter__anchor--blue" href="#">Más información</a>
                     </p>
                 </div>
                 
             </div>
             <div class="indexModal__button__container">
                 <button class="indexModal__next button__nextStep2"> Siguiente</button>
+            </div>
+
+        </section>
+
+        <section class="index__modal modal__step3 display__none">
+
+            <div class="navigator__step go__step2">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            
+            <div class="indexModal__formWrapper">
+                <div class="indexModal__header"> 
+                    <p> Paso 3 de 5 </p>  
+                </div>
+    
+                <h2 class="indexModal__mainTitle">
+                    Crea tu cuenta
+                </h2>
+                
+                <form class="indexModal__form indexModal__form__step3">
+
+                    <label for="indexNameInputStep3" 
+                        class="index__inputLabel index__inputLabel__step3 indexModal__nameInput__step3"
+                        id="labelNameStep3"
+                        >
+                        <span class="index__input__placeholder filledContent index__inputName__placeholderStep3">
+                            Nombre
+                        </span>
+                        <span class="space__input"></span>
+                        <input type="text" class="indexInput" id="indexNameInputStep3">
+                    </label>
+                    
+
+                    <label for="indexEmailOrPhoneInputStep3" class="index__inputLabel index__inputLabel__step3 indexModal__emailOrPhoneInput__"
+                    id="labelEopStep3"
+                    >
+                        <span class="space__input"></span>
+                        <span class="index__input__placeholder index__emailOrPhone__placeholderStep3 filledContent">
+                            Teléfono
+                        </span>
+                        <input type="text" class="indexInput" id="indexEmailOrPhoneInputStep3">
+                    </label>
+
+                    <label for="indexDateOfBirthStep3" class="index__inputLabel index__inputLabel__step3 indexModal__emailOrPhoneInput"
+                    id="labelDateStep3"
+                    >
+                        <span class="space__input"></span>
+                        <span class="index__input__placeholder index__date__placeholderStep3 filledContent">
+                            Fecha de nacimiento
+                        </span>
+                        <input type="text" class="indexInput" id="indexDateOfBirthStep3">
+                    </label>
+
+                </form>
+                
+                
+                
+            </div>
+            <div class="indexModal__button__container button__container__step3">
+                <div class="modal__step3__terms">
+                    <p class="modal__step3__termsInfo">
+                        Al registrarte, aceptas los <a class="twitter__anchor--blue" href="#">Términos de servicio </a>y la <a class="twitter__anchor--blue" href="#">Política de privacidad</a>, incluida la <a class="twitter__anchor--blue" href="#">Política de uso de cookies</a>. Twitter puede usar tu información de contacto, como tu dirección de correo electrónico y tu número de teléfono, con los fines descritos en nuestra Política de privacidad, por ejemplo, mantener tu cuenta segura y personalizar nuestros servicios, incluidos los anuncios.<a class="twitter__anchor--blue" href="#">Más información</a>. Otras personas podrán encontrarte por tu correo electrónico o número de teléfono, si los proporcionaste, a menos que elijas otra opción <a class="twitter__anchor--blue" href="#">aquí</a>.
+                    </p>
+                </div>
+                <button class="indexModal__next button__nextStep3"> Registrarse</button>
+            </div>
+
+        </section>
+
+        <section class="index__modal modal__step4 display__none">
+            <div class="navigator__step go__step3">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            
+            <div class="indexModal__formWrapper">
+                <div class="indexModal__header"> 
+                    <p> Paso 4 de 5 </p>  
+                </div>
+    
+                
+                <form class="indexModal__form">
+                    <h2 class="indexModal__mainTitle">
+                        Te enviamos un código
+                    </h2>
+
+                    <label for="indexCodeInputStep4" class="index__inputLabel index__inputLabel__step4 indexModal__codeInput">
+                        <span class="space__input"></span>
+                        <span class="index__input__placeholder index__code__placeholder">
+                            Código de verificación
+                        </span>
+                        <input type="number" class="indexInput" id="indexCodeInputStep4">
+                    </label>
+
+                    <span class="typeAnchor__twiiter indexModal__form__codeVerification">
+                        ¿No recibistes el correo electrónico?
+                    </span>
+
+                </form>
+            </div>
+            <div class="indexModal__button__container">
+                <button class="indexModal__next button__nextStep4"> Siguiente</button>
+            </div>
+
+        </section>
+
+        <section class="index__modal modal__step5 display__none">
+            <div class="navigator__step go__step4">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            
+            <div class="indexModal__formWrapper">
+                <div class="indexModal__header"> 
+                    <p> Paso 5 de 5 </p>  
+                </div>
+    
+                
+                <form class="indexModal__form">
+                    <h2 class="indexModal__mainTitle">
+                        Necesitarás una contraseña
+                    </h2>
+
+                    <p class="indexModal__secondTitle"> Asegúrate de que tenga 8 caracteres o más </p>
+
+                    <label for="indexPasswordInputStep5" class="index__inputLabel index__inputLabel__step5 indexModal__PasswordInput">
+                        <span class="space__input"></span>
+                        <span class="index__input__placeholder index__password__placeholder">
+                            Contraseña
+                        </span>
+                        <div class="inputStep5__wrapper">
+                            <input type="password" class="indexInput" id="indexPasswordInputStep5">
+                            <span class="labelStep5__showPassword" data-show="false"> 
+                                <i id="openEyeStep5" class="fa-solid fa-eye"></i>
+                                <i id="closeEyeStep5" class="display__none fa-solid fa-eye-slash"></i>
+
+                            </span>
+                        </div>
+                    </label>
+                    <span class="error__inputIndex"></span>
+
+                </form>
+            </div>
+            <div class="indexModal__button__container">
+                <button disabled class="indexModal__next button__nextStep5"> Siguiente</button>
+            </div>
+
+        </section>
+
+        <section class="index__modal modal__loginUser">
+            <div class="navigator__step modalPopUp__closeModal">
+                <i class="fa-solid fa-x"></i>
+            </div>
+            
+            <div class="indexModal__formWrapper login__wrapper">
+                <div class="indexModal__header login__header"> 
+                    <p> <i class="fa-brands fa-twitter"></i></p>  
+                </div>
+
+                <!-- <div class="space__53h">
+                    <h1>hola</h1>
+                </div> -->
+    
+                
+                <form class="indexModal__form login__wrapper__form">
+                    <!-- <div class="centerWrapper__login__form">
+                    </div> -->
+                    <h2 class="indexModal__mainTitle login__title">
+                        Inicia sesión en Twitter
+                    </h2>
+
+                    <div class="main__buttons login__buttons">
+                        <button class="main__button twitter__button--white button__google">
+                            <span>
+                                <!-- <i class="fa-brands fa-google"></i>  -->
+                                <a href="https://www.flaticon.es/iconos-gratis/google" title="google iconos" data-author="Google iconos creados por Freepik - Flaticon"> <img class="button__google--icon" src="../icon/google.png" alt=""> </a>
+                                Continuar con Google
+                            </span>
+                        </button>
+                        <button class="main__button twitter__button--white
+                        button__apple">
+                            <span><i class="fa-brands fa-apple"></i>
+                                Continuar con Apple
+                            </span> 
+                        </button>
+                        <div class="main__o"> <span>o</span> </div>
+        
+                    </div>
+
+                    <label for="loginInput" class="index__inputLabel indexModal__loginInput">
+                        <span class="space__input"></span>
+                        <span class="index__input__placeholder index__loginInput__placeholder text--overflow">
+                            Teléfono, correo electrónico o nombre de usuario
+                        </span>
+                        <input type="text" class="indexInput" id="loginInput">
+                    </label>
+                    
+                    <div class="indexModal__button__container">
+                        <button type="button" class="indexModal__next button__nextLogin button__login"> Siguiente</button>
+
+                        <button type="button" class="indexModal__next button__forgotPasswordLogin button__login button__login--white"> ¿Olvidaste tu contraseña? </button>
+
+                        <button type="button" class="indexModal__next button__login button__login--white login__nelson"> Inicia con Nelson</button>
+                    </div>
+
+                    <p class="login__register"> ¿No tienes una cuenta? <a class="twitter__anchor--blue" href="#">Regístrate</a> </p>
+                </form>
+            </div>
+
+            <div class="messageModal__login display__none">
+                <p> Lo siento no pudimos encontrar tu cuenta. </p>
             </div>
 
         </section>

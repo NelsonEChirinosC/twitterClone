@@ -1,5 +1,5 @@
 .modalPopUp__index{
-    position: absolute;
+    position: fixed;
     /* top: calc(50% - 325px); */
     top: calc(50% - 45vh);
     left: calc(50% - 300px);
@@ -14,18 +14,9 @@
 }
 
 
-
 .index__modal{
     width: 100%;
     margin: 0;
-}
-
-.indexModal__formWrapper{
-    margin: 0 auto;
-}
-
-.indexModal__form{
-    max-width: 440px;
 }
 
 .indexModal__header{
@@ -35,16 +26,30 @@
 
 }
 
-.indexModal__mainTitle{
-    font-size: 3.2rem;
-}
-
 .indexModal__button__container{
     padding: 0 75px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     background-color: #fff;
     z-index: 5;
+}
+
+/* Step One*/
+
+
+.indexModal__formWrapper{
+    margin: 0 auto;
+}
+
+
+.indexModal__form,
+.step2__register__info{
+    width: 440px;
+}
+
+
+.indexModal__mainTitle{
+    font-size: 3.2rem;
 }
 
 
