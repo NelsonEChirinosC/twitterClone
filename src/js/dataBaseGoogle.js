@@ -16,8 +16,8 @@ const usersGoogle = [
 {
     name: 'Monica',
     lastName: 'Pulgarin',
-    email: 'mst0512@gmail.com',
-    phone: '+814241164228',
+    email: 'monica@gmail.com',
+    phone: '+81785679067',
     password: 'monicaGoogle%56',
     emailRecuperation: '',
     dateOfBirth: {
