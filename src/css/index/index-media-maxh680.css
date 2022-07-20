@@ -1,0 +1,7 @@
+body .modalPopUp__index{
+    top: 0;
+}
+
+.modal__loginUser{
+    overflow-y: scroll;
+}

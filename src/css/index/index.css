@@ -258,6 +258,7 @@ h2.titles__title{
     /* border: 1px solid #000; */
     border-radius: 50%;
     cursor: pointer;
+    z-index: 5;
 }
 
 .navigator__step:hover{
@@ -596,7 +597,7 @@ h2.titles__title{
     /* border: 1px solid blue; */
 }
 
-.labelStep5__showPassword{
+.label__showPassword__eye{
     display: inline-block;
     margin: 4px 12px 0 8px;
     font-size: 1.6rem;
@@ -604,7 +605,7 @@ h2.titles__title{
     /* border: 1px solid black; */
 }
 
-.labelStep5__showPassword i.display__none{
+.label__showPassword__eye i.display__none{
     display: none;
 }
 
@@ -615,7 +616,7 @@ h2.titles__title{
 
 .modal__loginUser{
     min-height: 100%;
-    max-height: 100%;
+    max-height: 680px;
 }
 
 .login__wrapper{
@@ -698,7 +699,8 @@ h2.titles__title{
     max-width: 270px;
 }
 
-.indexModal__loginInput.focused .index__loginInput__placeholder{
+.indexModal__loginInput.focused .index__loginInput__placeholder,
+.indexModal__loginInput .index__loginInput__placeholder.filledContent{
     max-width: 330px;
     transform: translate(-32px,-14px) scale(0.8);
 }
@@ -770,6 +772,73 @@ h2.titles__title{
 .active{
     display: block;
 }
+
+/* // Login password */
+
+.modal__loginUserPassword .login__wrapper{
+    justify-content: start;
+    min-height: auto;
+    width: 100%;
+}
+
+.modal__loginUserPassword .indexModal__form{
+    width: 90%;
+    min-height: 300px;
+}
+
+.modal__loginUserPassword .indexModal__mainTitle {
+    margin-top: 22px;
+}
+
+.index__loginUserName{
+    position: relative;
+    border: none;
+    
+}
+
+.index__loginUserName::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #8ac6e4d2;
+    opacity: 0.1;
+}
+
+.modal__loginUserPassword .indexModal__form .index__userNameLogin{
+    color: #bbb;
+    transform: translate(-14px,-14px) scale(0.8);
+}
+
+.indexModal__PasswordLogin.focused .index__passwordLogin__placeholder,
+.indexModal__PasswordLogin .index__passwordLogin__placeholder.filledContent{
+    transform: translate(-8px,-14px) scale(0.8);
+}
+
+.modal__loginUserPassword .indexModal__button__container{
+    height: 150px;
+}
+
+.modal__loginUserPassword .login__register{
+    margin-top: 8px;
+    justify-self: flex-start;
+}
+
+#indexUserNameLogin{
+    margin-top: 4px;
+    font-size: 1.6rem;
+    color: #bbb;
+}
+
+.passwordLogin__forgot{
+    display: inline-block;
+    margin-top: 2px;
+    font-size: 1.3rem;
+}
+
+
 
 /*
     Remove arrow in phone number

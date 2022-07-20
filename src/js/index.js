@@ -54,6 +54,7 @@ function resetConfig(e){
 function resetInputValue(){
 
     indexInputAll.forEach(input => {
+        
         if(input.value.trim() == ''){
             input.value = '';
         }
@@ -64,7 +65,9 @@ function resetInputValue(){
 
 function resetInputIndexLabel(){
     indexInputLabelAll.forEach((label) =>{
+        let placeholder = label.querySelector('.index__input__placeholder');
         label.classList.remove('focused');
+        // placeholder.classList.remove('filledContent');
     });
 };
 
@@ -100,6 +103,17 @@ function openModalCreateTwitter(){
 
 };
 
+buttonLoginSesion.addEventListener('click', openLoginSection);
+
+function openLoginSection(){
+
+    body.classList.add('overFlowHidden');
+    wrapperBlack.classList.remove('display__none');
+    modalPopUpIndex.classList.remove('display__none');
+    indexModalLoginUserSection.classList.remove('display__none');
+
+}
+
 // Step 1:
 
 modalPopUpCloseModalAll.forEach(close=>{
@@ -115,13 +129,23 @@ function closeModal(){
     modalPopUpIndex.classList.add('display__none');
     indexModalStepOneSection.classList.add('display__none');
     indexModalLoginUserSection.classList.add('display__none');
+    indexModalPasswordLoginSection.classList.add('display__none');
 
     createTwitterNameInput.value ='';
     createTwitterEmailOrPhoneInput.value = '';
+    loginTwitterInput.value = '';
+    loginTwitterPasswordInput.value = '';
 
     indexSelectDay.value = 'default';
     indexSelectMonth.value = 'default';
     indexSelectYear.value = 'default';
+
+    resetInputIndexLabel();
+    indexInputLabelAll.forEach((label) =>{
+        let placeholder = label.querySelector('.index__input__placeholder');
+        placeholder.classList.remove('filledContent');
+    });
+
 };
 
 indexNextStep1Button.addEventListener('click', goToStepTwo);
@@ -285,9 +309,85 @@ function backToStepFour(){
 }
 
 
+// Login
 
+indexNextLoginButton.addEventListener('click', goToLoginPassword);
 
+function goToLoginPassword(){
 
+    if(loginTwitterInput.value.trim() == ''){
+        userTwitterLogin = undefined;
+        showMsgLogin();
+        return 
+    }
+    
+    userTwitterLogin = usersTwitter.find((user)=> {
+        
+        let inputLoginValue = loginTwitterInput.value.trim();
+        let inputUserNameValue;
+    
+        const regexNumber = /^0\d*$/g;
+        const regexUserName = /^@/g
+
+        if(!isNaN(inputLoginValue) && inputLoginValue.length > 5){
+
+            if(regexNumber.test(inputLoginValue)){
+                inputLoginValue = `+58${inputLoginValue.slice(1,)}`;
+
+            } else {
+                inputLoginValue = `+58${inputLoginValue}`;
+                
+            }
+
+        }
+
+        if(!regexUserName.test(inputLoginValue)){
+            inputUserNameValue = `@${inputLoginValue}`;
+        } else {
+            inputUserNameValue = inputLoginValue;
+        }
+
+        return user.email == inputLoginValue || user.phone == inputLoginValue || user.userName == inputUserNameValue;
+    })
+
+    if(userTwitterLogin == undefined){
+        showMsgLogin();
+        return
+    } else {
+
+        indexModalLoginUserSection.classList.add('display__none');
+        indexModalPasswordLoginSection.classList.remove('display__none');
+
+        indexUserNameLoginInput.value = userTwitterLogin.userName.slice(1,);
+
+    }
+
+    function showMsgLogin(){
+        messageModalUserLogin.classList.remove('display__none');
+
+        setTimeout(()=> {
+            messageModalUserLogin.classList.add('display__none');
+        }, 5000)
+    }
+}
+
+indexTwitterLogInButton.addEventListener('click', logInTwitter);
+
+function logInTwitter(){
+
+    if(userTwitterLogin.password != loginTwitterPasswordInput.value.trim()){
+
+        messageModalUserPasswordLogin.classList.remove('display__none');
+
+        setTimeout(()=> {
+            messageModalUserPasswordLogin.classList.add('display__none');
+        }, 5000)
+
+        
+
+    }
+    console.log('WELCOME TO TWITTER')
+}
 
 /*
     ////////////////////////////    STEP 1 /////////////////////////////////
@@ -352,9 +452,14 @@ function focusLabel(e){
     const labelElement = e.currentTarget;
     const input = labelElement.querySelector('.indexInput');
     
-    if(!input.classList.contains('indexSelect__date') && !labelElement.classList.contains('index__inputLabel__step3')){
-        input.focus();
-        labelElement.classList.add('focused');
+    if(
+        !input.classList.contains('indexSelect__date') && 
+        !labelElement.classList.contains('index__inputLabel__step3') && 
+        !labelElement.classList.contains('index__loginUserName')
+        ){
+    
+            input.focus();
+            labelElement.classList.add('focused');
     }
 
 }
@@ -399,9 +504,7 @@ function enableButtonStep1(){
         }
 
         // Cheking for errors
-        return indexInputLabelAll.every(label=> {
-            return !label.classList.contains('error');
-        });
+        return !indexModalEmailOrPhoneInputLabel.classList.contains('error')
 
 
     });
@@ -584,25 +687,37 @@ indexStepTwoCheckbox.addEventListener('click', ()=> { animateCheckBox(indexStepT
     ////////////////////////////    STEP 3 /////////////////////////////////
 */
 
-indexEyePasswordStep5.addEventListener('click', tooglePasswordVisibility);
+indexShowPasswordEyeAll.forEach((eye)=>{
+    eye.addEventListener('click', tooglePasswordVisibility);
 
-function tooglePasswordVisibility(){
+})
 
-    if(indexEyePasswordStep5.dataset.show == 'false'){
+function tooglePasswordVisibility(e){
 
-        indexEyePasswordStep5.dataset.show = 'true';
-        openEyeStep5.classList.add('display__none');
-        closeEyeStep5.classList.remove('display__none');
+    let wrapperEye = e.currentTarget;
+    let parentWrapper = wrapperEye.parentNode;
 
-        createTwitterPasswordInputStep5.type = 'text';
+    console.log(wrapperEye)
 
-    } else if (indexEyePasswordStep5.dataset.show == 'true'){
+    let openEye = wrapperEye.querySelector('.open__eye'); 
+    let closeEye = wrapperEye.querySelector('.close__eye'); 
+    let input = parentWrapper.querySelector('input');
 
-        indexEyePasswordStep5.dataset.show = 'false';
-        openEyeStep5.classList.remove('display__none');
-        closeEyeStep5.classList.add('display__none');
+    if(wrapperEye.dataset.show == 'false'){
 
-        createTwitterPasswordInputStep5.type = 'password';
+        wrapperEye.dataset.show = 'true';
+        openEye.classList.add('display__none');
+        closeEye.classList.remove('display__none');
+
+        input.type = 'text';
+
+    } else if (wrapperEye.dataset.show == 'true'){
+
+        wrapperEye.dataset.show = 'false';
+        openEye.classList.remove('display__none');
+        closeEye.classList.add('display__none');
+
+        input.type = 'password';
 
     }
 

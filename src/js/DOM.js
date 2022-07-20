@@ -31,6 +31,7 @@ const indexModalStepThreeSection = document.querySelector('.modal__step3');
 const indexModalStepFourSection = document.querySelector('.modal__step4');
 const indexModalStepFiveSection = document.querySelector('.modal__step5');
 const indexModalLoginUserSection = document.querySelector('.modal__loginUser');
+const indexModalPasswordLoginSection = document.querySelector('.modal__loginUserPassword');
 
 
 
@@ -38,7 +39,7 @@ const indexModalLoginUserSection = document.querySelector('.modal__loginUser');
 const indexChaCountSpan = document.querySelector('.chaCount');
 const indexChangePhoneOrEmailSpan = document.querySelector('.indexModal__form__emailOrPhone');
 const indexSelectArrow = document.querySelector('.indexSelect__arrow');
-const indexEyePasswordStep5 = document.querySelector('.labelStep5__showPassword');
+const indexShowPasswordEyeAll = Array.from(document.querySelectorAll('.label__showPassword__eye'));
 
 
 
@@ -54,12 +55,16 @@ const modalBackStepFour = document.querySelector('.go__step4');
 
 // Error Span
 const [error__NameInputIndex, error__EoPInputIndex, error__PasswordInputIndex] = document.querySelectorAll('.error__inputIndex');
+const messageModalUserLogin = document.querySelector('.login__user');
+const messageModalUserPasswordLogin = document.querySelector('.login__passwordUser');
 
 //Placeholder
 const indexInputNamePlaceholder = document.querySelector('.index__inputName__placeholder');
 const indexEmailOrPhonePlaceholder = document.querySelector('.index__emailOrPhone__placeholder');
 const indexEmailOrPhonePlaceholderStep3 = document.querySelector('.index__emailOrPhone__placeholderStep3');
 const indexPasswordPlaceholderStep5 = document.querySelector('.index__password__placeholder');
+const indexLoginInputPlaceholder = document.querySelector('.index__loginInput__placeholder');
+const indexPasswordLoginPlaceholder = document.querySelector('.index__passwordLogin__placeholder');
 
 
 // Inputs
@@ -72,6 +77,9 @@ const createTwitterEmailOrPhoneInputStep3 = document.querySelector('#indexEmailO
 const createTwitterDateInputStep3 = document.querySelector('#indexDateOfBirthStep3');
 const createTwitterCodeInputStep4 = document.querySelector('#indexCodeInputStep4');
 const createTwitterPasswordInputStep5 = document.querySelector('#indexPasswordInputStep5');
+const loginTwitterInput = document.querySelector('#loginInput');
+const indexUserNameLoginInput = document.querySelector('#indexUserNameLogin');
+const loginTwitterPasswordInput = document.querySelector('#indexPasswordLogin');
 
 
 
@@ -87,11 +95,14 @@ const indexSelectYear = document.querySelector('#indexSelectYear');
 const googleButtonIndexAll = Array.from(document.querySelectorAll('.button__google'));
 const appleButtonIndexAll = Array.from(document.querySelectorAll('.button__apple'));
 const buttonCreateTwitterIndex = document.querySelector('.button__createTwitter');
+const buttonLoginSesion = document.querySelector('.button__sesion')
 const indexNextStep1Button = document.querySelector('.button__nextStep1');
 const indexNextStep2Button = document.querySelector('.button__nextStep2');
 const indexNextStep3Button = document.querySelector('.button__nextStep3');
 const indexNextStep4Button = document.querySelector('.button__nextStep4');
 const indexNextStep5Button = document.querySelector('.button__nextStep5');
+const indexNextLoginButton = document.querySelector('.button__nextLogin');
+const indexTwitterLogInButton = document.querySelector('.button__twitter__LogIn');
 
 
 // Checkbox

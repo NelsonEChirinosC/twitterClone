@@ -8,7 +8,9 @@
     <!-- Styles  -->
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index/index.css">
-    <link rel="stylesheet" href="./css/index/index-media-maxh585.css" media="(max-height:640px)">
+    <link rel="stylesheet" href="./css/index/index-media-maxh500.css" media="(max-height:500px)">
+    <link rel="stylesheet" href="./css/index/index-media-maxh640.css" media="(max-height:640px)">
+    <link rel="stylesheet" href="./css/index/index-media-maxh680.css" media="(max-height:680px)">
     <link rel="stylesheet" href="./css/index/index-media-min700.css" media="(min-width:700px)">
     <link rel="stylesheet" href="./css/index/index-media-min979.css" media="(min-width:980px)">
 
@@ -28,15 +30,12 @@
 <!-- 
     this class is for not scrolling the body with a modal present: overFlowHidden 
 -->
-<body
-class="overFlowHidden"
+<body>
 
->
-
-    <div class="wrapperBlack">
+    <div class="wrapperBlack display__none">
     </div>
 
-    <section class="modalPopUp__index">
+    <section class="modalPopUp__index display__none">
         <section class="index__modal modal__step1 display__none">
             <div class="navigator__step modalPopUp__closeModal">
                 <i class="fa-solid fa-x"></i>
@@ -311,9 +310,9 @@ class="overFlowHidden"
                         </span>
                         <div class="inputStep5__wrapper">
                             <input type="password" class="indexInput" id="indexPasswordInputStep5">
-                            <span class="labelStep5__showPassword" data-show="false"> 
-                                <i id="openEyeStep5" class="fa-solid fa-eye"></i>
-                                <i id="closeEyeStep5" class="display__none fa-solid fa-eye-slash"></i>
+                            <span class="label__showPassword__eye" data-show="false"> 
+                                <i class=" open__eye fa-solid fa-eye"></i>
+                                <i class="display__none close__eye fa-solid fa-eye-slash"></i>
 
                             </span>
                         </div>
@@ -328,7 +327,7 @@ class="overFlowHidden"
 
         </section>
 
-        <section class="index__modal modal__loginUser">
+        <section class="index__modal modal__loginUser display__none">
             <div class="navigator__step modalPopUp__closeModal">
                 <i class="fa-solid fa-x"></i>
             </div>
@@ -388,8 +387,63 @@ class="overFlowHidden"
                 </form>
             </div>
 
-            <div class="messageModal__login display__none">
+            <div class="messageModal__login login__user display__none">
                 <p> Lo siento no pudimos encontrar tu cuenta. </p>
+            </div>
+
+        </section>
+        
+        <section class="index__modal modal__loginUserPassword display__none">
+            <div class="navigator__step modalPopUp__closeModal">
+                <i class="fa-solid fa-x"></i>
+            </div>
+            
+            <div class="indexModal__formWrapper login__wrapper">
+                <div class="indexModal__header login__header"> 
+                    <p> <i class="fa-brands fa-twitter"></i></p>  
+                </div>
+    
+                <form class="indexModal__form">
+                    <h2 class="indexModal__mainTitle">
+                        Introduce tu contraseña
+                    </h2>
+
+                    <label for="indexUserNameLogin" 
+                        class="index__inputLabel index__loginUserName indexModal__userNameLogin"
+                        id="labelNameStep3"
+                        >
+                        <span class="index__input__placeholder filledContent index__userNameLogin">
+                            Nombre de usuario
+                        </span>
+                        <span class="space__input"></span>
+                        <input type="text" class="indexInput" id="indexUserNameLogin">
+                    </label>
+
+                    <label for="indexPasswordLogin" class="index__inputLabel index__inputLabel__login indexModal__PasswordLogin">
+                        <span class="space__input"></span>
+                        <span class="index__input__placeholder index__passwordLogin__placeholder">
+                            Contraseña
+                        </span>
+                        <div class="inputStep5__wrapper">
+                            <input type="password" class="indexInput" id="indexPasswordLogin">
+                            <span class="label__showPassword__eye" data-show="false"> 
+                                <i class=" open__eye fa-solid fa-eye"></i>
+                                <i class="display__none close__eye fa-solid fa-eye-slash"></i>
+                            </span>
+                        </div>
+                    </label>
+
+                    <span class="passwordLogin__forgot"> <a class="twitter__anchor--blue" href="#"> ¿Olvidaste tu contraseña? </a> </span>
+
+                </form>
+            </div>
+            <div class="indexModal__button__container">
+                <button disabled class="indexModal__next button__twitter__LogIn"> Iniciar sesión</button>
+                <p class="login__register"> ¿No tienes una cuenta? <a class="twitter__anchor--blue" href="#">Regístrate</a> </p>
+            </div>
+
+            <div class="messageModal__login login__passwordUser display__none">
+                <p> Contraseña incorrecta. </p>
             </div>
 
         </section>

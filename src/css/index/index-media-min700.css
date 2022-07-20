@@ -1,11 +1,13 @@
 .modalPopUp__index{
     position: fixed;
     /* top: calc(50% - 325px); */
-    top: calc(50% - 45vh);
+    top: calc(50% - 325px);
     left: calc(50% - 300px);
     width: 600px;
     /* height: 650px; */
-    height: 90vh;
+    /* height: 90vh; */
+    /* min-height: 450px; */
+    max-height: 650px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 15px;
@@ -52,4 +54,26 @@
     font-size: 3.2rem;
 }
 
+/*
+
+    Login Section
+
+*/
+
+.modal__loginUser .login__wrapper__form{
+    max-width: 288px;
+}
+
+.login__register{
+    margin-top: 0;
+}
+
+.messageModal__login{
+    left: calc(50% - 175px);
+    bottom: 20px;
+    width: 350px;
+    height: 50px;
+    border-radius: 5px;
+    z-index: 5;
+}
 

@@ -1,6 +1,10 @@
 /*
     This js is share in all the html created necessary
 */ 
+
+// Globals Variables
+let userTwitterLogin;
+
 // This function animate the checkbox
 
 function animateCheckBox(isChecked, checkbox){
@@ -140,8 +144,30 @@ function toogleFilledContent (e){
 
     const elem = e.currentTarget
 
+    console.log(elem.id)
+
     switch(elem.id){
 
+        /*
+            Index Login Twitter Inputs
+        */
+
+        case 'loginInput':
+            condition(loginTwitterInput.value.trim(), indexLoginInputPlaceholder);
+            break
+
+        case 'indexPasswordLogin':
+
+            const passwordValue = loginTwitterPasswordInput.value.trim();
+
+            if(passwordValue == ''){
+                indexTwitterLogInButton.disabled = true;
+            } else {
+                indexTwitterLogInButton.disabled = false;
+            }
+
+            condition(passwordValue, indexPasswordLoginPlaceholder);
+            break
         /*
         
             Index Twiiter Inputs

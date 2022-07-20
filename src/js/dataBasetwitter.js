@@ -1,3 +1,50 @@
+const usersTwitter = [
+        {
+            name: 'Nelson Chirinos',
+            email: 'ezequieln_@hotmail.com',
+            phone: '+584144188697',
+            password: 'example#1',
+            emailRecuperation: 'example@hotmail.com',
+            dateOfBirth: {
+                day: 4,
+                month: 5,
+                year: 1990
+            },
+            genre: 'Male',
+            profileImg: '../../img/profileUser__nelson.jpg',
+            description:'Ingeniero Mecánico y programador FrontEnd actualmente aprendiendo para desarrollar paginas web de gran calidad, con conocimientos de HTML, CSS y Javascript. Siendo fan de toda la inovación tecnologica, incluida',
+            userName: '@ezequieln4590',
+            interests: {
+                1: 'Tecnología',
+                2: 'Gaming',
+                3: 'Negocios & finanzas'
+            }
+
+        },
+        {
+            name: 'Monica Pulgarin',
+            email: 'monica@hotmail.com',
+            phone: '+584148978678',
+            password: 'example#2',
+            emailRecuperation: 'example2@hotmail.com',
+            dateOfBirth: {
+                day: 12,
+                month: 5,
+                year: 1989
+            },
+            genre: 'Female',
+            profileImg: '',
+            description:'',
+            userName: '',
+            interests: {
+                1: 'Moda',
+                2: 'Deportes',
+                3: 'Negocios & finanzas'
+            }
+
+        },
+]
+
 const errorMessageTwitter = {
     createAccount: {
         name:{

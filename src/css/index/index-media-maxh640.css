@@ -19,7 +19,8 @@
     overflow-y: visible;
 }
 
-.login__wrapper .indexModal__button__container{
+.login__wrapper .indexModal__button__container,
+.modal__loginUserPassword .indexModal__button__container{
     position: static;
     box-shadow: none;
     z-index: 1;
