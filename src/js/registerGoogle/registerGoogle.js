@@ -6,6 +6,7 @@ let newUser = {};
 let isPasswordSection = false;
 
 window.onload = ()=>{
+    emailForm.classList.remove('display__none');
     emailInput.focus();
 }
 
@@ -340,7 +341,7 @@ function simulateApiToPasswordSection(emailValue){
     } else {
 
         const isInDataBase = usersGoogle.some((user)=> {
-            return user.email == emailValue || user.phone == emailValue
+            return user.email == emailValue.toLowerCase() || user.phone == emailValue
         });
 
 
@@ -550,6 +551,7 @@ function simulateApiToAccountSectionP1(){
     emailForm.classList.remove('move');
     mainTitlesWrapper.classList.add('createAccountSection');
     createFormP1.classList.remove('display__none');
+    // createFormP1.classList.add('actualView');
     mainTitle.innerHTML = `Crear tu cuenta de Google`;
     secondTitle.classList.remove('active');
     mainRegisterGoogle.classList.add('inCreateAccount');
@@ -583,6 +585,7 @@ function simulateApiToEmailSectionFromP1(){
     mainRegisterGoogle.classList.remove('inCreateAccount');
     createAccountFooterGoogle.classList.remove('createAccount');
     // secondTitle.classList.remove('display__none');
+    resetPhase1InputsValues();
     emailInput.focus()
 
 }
@@ -759,7 +762,7 @@ function simulateApiBackToAccountSectionP1(){
     mediaLaptopForCreateAccountImg.src = 'https://ssl.gstatic.com/accounts/signup/glif/account.svg';
     mediaLaptopForCreateAccountText.innerHTML = 'Una cuenta. Todos los servicios de Google a tu disposición.';
 
-    resetPhase2Errors();
+    resetPhase2Inputs();
 
     // secondTitle.classList.remove('active');
    
@@ -778,8 +781,25 @@ function simulateApiBackToAccountSectionP1(){
 
 }
 
-function resetPhase2Errors(){
-    //// Reset the errors
+function resetPhase1InputsValues(){
+    // Reset  values
+
+    createNameInput.value = '';
+    createLastNameInput.value = '';
+    createEmailInput.value = '';
+    createPasswordInput.value = '';
+    createConfirmInput.value ='';
+
+    console.log(createFormP1PlaceholdersAll)
+    createFormP1PlaceholdersAll.forEach(placeholder => {
+        console.log(placeholder)
+        placeholder.classList.remove('filledContent')
+    });
+
+}
+
+function resetPhase2Inputs(){
+    //// Reset the errors and values
     //Phone
     createPhoneInput.value = '';
     createPhoneInput.classList.remove('error');
@@ -818,6 +838,11 @@ function resetPhase2Errors(){
     createReferAsInput.value = 'default';
     createReferAsInput.classList.remove('error');
     createOptionsSelect[2].classList.remove('display__none');
+
+    createFormP2PlaceholdersAll.forEach(placeholder => {
+        placeholder.classList.remove('filledContent')
+    });
+
 }
 
 
@@ -934,6 +959,7 @@ function simulateApiToEmailSectionFromP2(){
     emailForm.classList.remove('display__none');
     emailForm.classList.add('actualView');
     mainTitlesWrapper.classList.remove('createAccountSection');
+    createFormP1.classList.remove('left');
     createFormP2.classList.add('display__none');
     createFormP2.classList.remove('actualView');
     createSectionSecondTitle.classList.add('display__none');
@@ -942,6 +968,8 @@ function simulateApiToEmailSectionFromP2(){
     mediaLaptopForCreateAccountText.innerHTML = 'Una cuenta. Todos los servicios de Google a tu disposición.';
     mainRegisterGoogle.classList.add('inCreateAccount');
     createAccountFooterGoogle.classList.remove('createAccount');
+    resetPhase1InputsValues();
+    resetPhase2Inputs();
     // secondTitle.classList.remove('display__none');
     emailInput.focus()
 

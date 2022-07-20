@@ -198,6 +198,8 @@ const Allerrors = Array.from(document.querySelectorAll('.error__input'));
 
 // Placeholders Inputs
 const placerHoldersInputs = Array.from(document.querySelectorAll('.inputs__form__placeholder'));
+const createFormP1PlaceholdersAll = Array.from(document.querySelectorAll('.main__create__formP1 .inputs__form__placeholder'));
+const createFormP2PlaceholdersAll = Array.from(document.querySelectorAll('.main__create__formP2 .inputs__form__placeholder'));
 const accessEmailPlaceholder = document.querySelector('.accessEmailPlaceholder');
 const accessPasswordPlaceholder = document.querySelector('.accessPasswordPlaceholder');
 

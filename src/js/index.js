@@ -320,7 +320,8 @@ function goToDetailsInfoTwitter(){
     usersTwitter.push(userTwitterLogin);
     userTwitterLogin = {};
 
-    alert('Account Created')
+    alert('Account Created');
+    indexModalStepFiveSection.classList.add('display__none');
     closeModal();
 
 
