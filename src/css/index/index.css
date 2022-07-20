@@ -530,9 +530,14 @@ h2.titles__title{
     transform: translate(-6px,-14px) scale(0.8);
 }
 
+.index__inputLabel__step3 .index__emailOrPhone__placeholderStep3.filledContent.leftTranslate{
+    transform: translate(-12px,-14px) scale(0.8);
+}
+
 .index__inputLabel__step3 .index__date__placeholderStep3.filledContent{
     transform: translate(-14px,-14px) scale(0.8);
 }
+
 
 .index__inputLabel__step3 .indexInput{
     position: relative;

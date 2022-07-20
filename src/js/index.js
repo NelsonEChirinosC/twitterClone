@@ -78,7 +78,7 @@ googleButtonIndexAll.forEach(googleButton => {
 })
 
 function openGoogleRegister(){
-    window.open("./page/registerGoogle.html", "", "width=502px, height=550px")
+    window.open("./src/page/registerGoogle.html", "", "width=502px, height=550px")
 };
 
 appleButtonIndexAll.forEach(appleButton => {
@@ -87,7 +87,7 @@ appleButtonIndexAll.forEach(appleButton => {
 
 
 function openAppleRegister(){
-    window.open('./page/registerApple.html',"","width=700px,height=707px");
+    window.open('./src/page/registerApple.html',"","width=700px,height=707px");
 };
 
 buttonCreateTwitterIndex.addEventListener('click', openModalCreateTwitter);
@@ -141,7 +141,9 @@ function closeModal(){
     resetInputIndexLabel();
     indexInputLabelAll.forEach((label) =>{
         let placeholder = label.querySelector('.index__input__placeholder');
-        placeholder.classList.remove('filledContent');
+        if(!label.classList.contains('index__inputLabel__step3')){
+            placeholder.classList.remove('filledContent');
+        }
     });
 
     userTwitterLogin = {};
