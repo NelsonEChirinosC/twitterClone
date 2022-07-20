@@ -421,12 +421,10 @@ function simulateApiToTwitterSection (){
             passwordInput.focus();
         } else {
             
-            console.log('///////////////////////////////////');
-            console.log('///////////////////////////////////');
-            console.log('WELCOME THIS IS THE PAGE OF TWITTER');
-            console.log('///////////////////////////////////');
-            console.log('///////////////////////////////////');
-            
+            alert('WELCOME TO TWITTER')
+            emailInput.value = '';
+            passwordInput.value = '';
+            window.close();
         }
 
     }

@@ -3,7 +3,7 @@
 */ 
 
 // Globals Variables
-let userTwitterLogin;
+let userTwitterLogin = {};
 
 // This function animate the checkbox
 

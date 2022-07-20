@@ -27,17 +27,17 @@ indexSelectYear.innerHTML = selectYearContent;
 
 */
 
-let userTwitter = {};
+// let userTwitter = {};
 
-// BORRAR
-userTwitter.name = 'Nelson Chirinos';
-userTwitter.phone = '04144188697';
-userTwitter.email = 'ezequieln@gmail.com';
-userTwitter.dateOfBirth = {
-    day: '17',
-    month: 'october',
-    year: '2007',
-};
+// // BORRAR
+// userTwitter.name = 'Nelson Chirinos';
+// userTwitter.phone = '04144188697';
+// userTwitter.email = 'ezequieln@gmail.com';
+// userTwitter.dateOfBirth = {
+//     day: '17',
+//     month: 'october',
+//     year: '2007',
+// };
 ///////////////////////////////////////////////////////
 
 
@@ -65,9 +65,7 @@ function resetInputValue(){
 
 function resetInputIndexLabel(){
     indexInputLabelAll.forEach((label) =>{
-        let placeholder = label.querySelector('.index__input__placeholder');
         label.classList.remove('focused');
-        // placeholder.classList.remove('filledContent');
     });
 };
 
@@ -146,23 +144,25 @@ function closeModal(){
         placeholder.classList.remove('filledContent');
     });
 
+    userTwitterLogin = {};
+
 };
 
 indexNextStep1Button.addEventListener('click', goToStepTwo);
 
 function goToStepTwo(){
 
-    userTwitter.name = createTwitterNameInput.value.trim();
+    userTwitterLogin.name = createTwitterNameInput.value.trim();
 
     if(indexChangePhoneOrEmailSpan.dataset.type == 'phone'){
-        userTwitter.phone = createTwitterEmailOrPhoneInput.value;
+        userTwitterLogin.phone = createTwitterEmailOrPhoneInput.value;
     }
 
     if(indexChangePhoneOrEmailSpan.dataset.type == 'email'){
-        userTwitter.email = createTwitterEmailOrPhoneInput.value.trim();
+        userTwitterLogin.email = createTwitterEmailOrPhoneInput.value.trim();
     }
 
-    userTwitter.dateOfBirth = {
+    userTwitterLogin.dateOfBirth = {
         day: indexSelectDay.value,
         month: indexSelectMonth.value,
         year: indexSelectYear.value,
@@ -188,8 +188,8 @@ indexNextStep2Button.addEventListener('click', goToStepThree);
 
 function goToStepThree(){
 
-    const {name, email, phone} = userTwitter
-    const {day, month, year} = userTwitter.dateOfBirth
+    const {name, email, phone} = userTwitterLogin
+    const {day, month, year} = userTwitterLogin.dateOfBirth
 
     createTwitterNameInputStep3.value = name;
 
@@ -308,6 +308,22 @@ function backToStepFour(){
 
 }
 
+indexNextStep5Button.addEventListener('click', goToDetailsInfoTwitter);
+
+function goToDetailsInfoTwitter(){
+
+    userTwitterLogin.password = createTwitterPasswordInputStep5.value;
+
+    // Push the new user into the data base
+    usersTwitter.push(userTwitterLogin);
+    userTwitterLogin = {};
+
+    alert('Account Created')
+    closeModal();
+
+
+}
+
 
 // Login
 
@@ -358,7 +374,9 @@ function goToLoginPassword(){
         indexModalLoginUserSection.classList.add('display__none');
         indexModalPasswordLoginSection.classList.remove('display__none');
 
-        indexUserNameLoginInput.value = userTwitterLogin.userName.slice(1,);
+        if(userTwitterLogin.userName != undefined){
+            indexUserNameLoginInput.value = userTwitterLogin.userName.slice(1,);
+        }
 
     }
 
@@ -386,7 +404,7 @@ function logInTwitter(){
         
 
     }
-    console.log('WELCOME TO TWITTER')
+    alert('WELCOME TO TWITTER')
 }
 
 /*
@@ -723,6 +741,11 @@ function tooglePasswordVisibility(e){
 
 }
 
+/*
+    ////////////////////////////    STEP 5 /////////////////////////////////
+*/
+
+
 createTwitterPasswordInputStep5.addEventListener('keyup', showErrorPasswordStep5);
 
 function showErrorPasswordStep5(){
@@ -773,3 +796,5 @@ function verificationPassword(password){
 
     return false
 }
+
+
